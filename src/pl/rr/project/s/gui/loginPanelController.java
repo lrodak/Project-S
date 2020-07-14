@@ -1,4 +1,4 @@
-package sample;
+package pl.rr.project.s.gui;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,7 +13,7 @@ import java.io.IOException;
 public class loginPanelController {
     @FXML
     public void goToMenu(MouseEvent mouseEvent) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("menuPanel.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/menuPanel.fxml"));
         Scene scene = new Scene(root);
 
         Stage window;
@@ -24,7 +24,7 @@ public class loginPanelController {
 
 
     public void goToRegister(MouseEvent mouseEvent) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("registerPanel.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/registerPanel.fxml"));
         Scene scene = new Scene(root);
 
         Stage window;
