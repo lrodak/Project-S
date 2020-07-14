@@ -12,8 +12,9 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("loginPanel.fxml"));
         primaryStage.setTitle("Project-S");
-        primaryStage.setScene(new Scene(root, 600, 600));
+        primaryStage.setScene(new Scene(root, 400, 500));
         primaryStage.show();
+        primaryStage.setResizable(false);
     }
 
 

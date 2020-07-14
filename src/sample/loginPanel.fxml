@@ -1,12 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.loginPanelController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="400.0" scaleShape="false" style="-fx-background-color: #1b2838;" stylesheets="@loginPanelStyles.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.loginPanelController">
    <children>
-      <Button layoutX="231.0" layoutY="162.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="139.0" text="Click me" />
-      <Button layoutX="503.0" layoutY="348.0" mnemonicParsing="false" onMousePressed="#goToMenu" text="DO MENU!" />
-      <CheckBox layoutX="269.0" layoutY="102.0" mnemonicParsing="false" text="Check me" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#171a21" height="100.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="400.0" />
+      <TextField layoutX="120.0" layoutY="167.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="160.0" styleClass="text-field-login" />
+      <Label layoutX="120.0" layoutY="210.0" text="Password" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font>
+      </Label>
+      <PasswordField layoutX="120.0" layoutY="225.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="160.0" styleClass="text-field-login" />
+      <Label layoutX="119.0" layoutY="152.0" text="Username" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font></Label>
+      <Button layoutX="119.0" layoutY="286.0" mnemonicParsing="false" onMouseClicked="#goToMenu" prefHeight="30.0" prefWidth="60.0" styleClass="button-login" text="Login" textAlignment="CENTER" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font></Button>
+      <Button layoutX="215.0" layoutY="286.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="60.0" styleClass="button-login" text="Cancel" textAlignment="CENTER" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font></Button>
+      <Label alignment="CENTER" layoutX="104.0" layoutY="29.0" prefHeight="30.0" prefWidth="192.0" text="Project-S" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="37.0" />
+         </font>
+      </Label>
+      <Button layoutX="24.0" layoutY="448.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#goToRegister" prefHeight="25.0" prefWidth="100.0" styleClass="button-register" text="Create account" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
    </children>
 </Pane>

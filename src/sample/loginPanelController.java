@@ -22,4 +22,18 @@ public class loginPanelController {
         window.show();
     }
 
+
+    public void goToRegister(MouseEvent mouseEvent) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("registerPanel.fxml"));
+        Scene scene = new Scene(root);
+
+        Stage window;
+        window = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+        window.setScene(scene);
+        window.show();
+    }
+
+
+
+
 }
