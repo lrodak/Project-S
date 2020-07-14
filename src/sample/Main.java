@@ -15,6 +15,7 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root, 400, 500));
         primaryStage.show();
         primaryStage.setResizable(false);
+        //komit2
     }
 
 
