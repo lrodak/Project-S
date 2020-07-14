@@ -14,6 +14,7 @@ public class Main extends Application {
         primaryStage.setTitle("Project-S");
         primaryStage.setScene(new Scene(root, 600, 600));
         primaryStage.show();
+        //komit
     }
 
 
