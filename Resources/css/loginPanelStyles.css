@@ -1,11 +1,14 @@
+.panel-main
+{
+    -fx-background-color:  #1b2838;
+}
+
 .text-field-login
 {
     -fx-text-inner-color: white;
-
     -fx-background-color: #1b2838;
     -fx-border-color: #c7d5e0;
     -fx-border-radius: 5%;
-
 }
 
 .button-login
