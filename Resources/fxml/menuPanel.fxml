@@ -5,7 +5,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.rr.project.s.gui.menuPanelController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.rr.project.s.gui.menuPanel.menuPanelController">
    <children>
       <Label alignment="CENTER" contentDisplay="CENTER" layoutX="211.0" layoutY="54.0" prefHeight="40.0" prefWidth="155.0" text="Menu" textAlignment="CENTER" />
       <Button fx:id="playButton" layoutX="235.0" layoutY="112.0" mnemonicParsing="false" onMouseEntered="#onMouseCarried" prefHeight="59.0" prefWidth="108.0" text="Play a game" />

@@ -19,6 +19,8 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/loginPanel.fxml"));
+        //check this one:
+        //root.getStylesheets().add(getClass().getResource("/css/loginPanelStyles.css").toExternalForm());
         primaryStage.setTitle("Project-S");
         primaryStage.setScene(new Scene(root, 400, 500));
         primaryStage.initStyle(StageStyle.UNDECORATED);

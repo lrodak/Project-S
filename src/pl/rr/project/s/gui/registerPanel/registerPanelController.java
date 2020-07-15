@@ -1,4 +1,4 @@
-package pl.rr.project.s.gui;
+package pl.rr.project.s.gui.registerPanel;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -8,10 +8,14 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import pl.rr.project.s.gui.profilePanel.profilePanelMethods;
 
 import java.io.IOException;
 
 public class registerPanelController {
+    public registerPanelController() {
+        registerPanelMethods registerMethods = new registerPanelMethods();
+    }
 
     @FXML
     public void goLoginPanel(MouseEvent mouseEvent) throws IOException {
