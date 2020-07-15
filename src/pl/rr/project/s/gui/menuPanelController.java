@@ -15,6 +15,8 @@ import java.io.IOException;
 public class menuPanelController {
     @FXML
     private Button playButton;
+
+    @FXML
     public void goToProfile(MouseEvent mouseEvent) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/profilePanel.fxml"));
         Scene scene = new Scene(root);
@@ -25,7 +27,19 @@ public class menuPanelController {
         window.show();
     }
 
-    public void onMouseCarried(MouseEvent mouseEvent){
+    @FXML
+    public void onMouseCarried(MouseEvent mouseEvent) {
         playButton.setTooltip(new Tooltip("Tooltip for Button"));
+    }
+
+    @FXML
+    public void logout(MouseEvent mouseEvent) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/loginPanel.fxml"));
+        Scene scene = new Scene(root);
+
+        Stage window;
+        window = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+        window.setScene(scene);
+        window.show();
     }
 }

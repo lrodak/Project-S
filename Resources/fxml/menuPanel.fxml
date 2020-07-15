@@ -17,5 +17,6 @@
          </font>
       </Label>
       <Button fx:id="profileButton" layoutX="439.0" layoutY="5.0" mnemonicParsing="false" onMouseClicked="#goToProfile" opacity="0.0" prefHeight="40.0" prefWidth="155.0" />
+      <Button layoutX="14.0" layoutY="13.0" mnemonicParsing="false" onMouseClicked="#logout" text="Logout" />
    </children>
 </Pane>
