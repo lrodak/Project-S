@@ -2,10 +2,11 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.rr.project.s.gui.profilePanel.profilePanelController">
    <children>
       <Label layoutX="269.0" layoutY="41.0" text="It's you!" />
-      <Button layoutX="35.0" layoutY="331.0" mnemonicParsing="false" onMouseClicked="#goBackToMenu" text="Back" />
+      <Polyline fill="#464343" layoutX="55.0" layoutY="48.0" onMouseClicked="#goBackToMenu" points="-50.0, -22.0, 0.0, -48.0, 0.0, 7.0, -50.0, -22.0" strokeType="INSIDE" />
    </children>
 </Pane>

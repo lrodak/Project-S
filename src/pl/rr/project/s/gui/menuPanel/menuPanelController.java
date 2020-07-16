@@ -1,5 +1,6 @@
 package pl.rr.project.s.gui.menuPanel;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -46,5 +47,10 @@ public class menuPanelController {
         window = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
         window.setScene(scene);
         window.show();
+    }
+
+    @FXML
+    public void exitApplication(MouseEvent event) {
+        Platform.exit();
     }
 }
