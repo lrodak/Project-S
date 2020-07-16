@@ -2,35 +2,21 @@ package pl.rr.project.s.gui.menuPanel;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Tooltip;
 import javafx.scene.input.MouseEvent;
-import javafx.stage.Stage;
 import pl.rr.project.s.gui.loginPanel.loginPanelMethods;
 
 import java.io.IOException;
 
-public class menuPanelController {
-    public menuPanelController() {
-        menuPanelMethods menuMethods = new menuPanelMethods();
-    }
+public class menuPanelController extends loginPanelMethods {
 
     @FXML
     private Button playButton;
 
     @FXML
     public void goToProfile(MouseEvent mouseEvent) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/profilePanel.fxml"));
-        Scene scene = new Scene(root);
-
-        Stage window;
-        window = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-        window.setScene(scene);
-        window.show();
+        goToScene("/fxml/profilePanel.fxml", null, mouseEvent);
     }
 
     @FXML
@@ -40,13 +26,7 @@ public class menuPanelController {
 
     @FXML
     public void logout(MouseEvent mouseEvent) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/loginPanel.fxml"));
-        Scene scene = new Scene(root);
-
-        Stage window;
-        window = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-        window.setScene(scene);
-        window.show();
+        goToScene("/fxml/loginPanel.fxml", null, mouseEvent);
     }
 
     @FXML
