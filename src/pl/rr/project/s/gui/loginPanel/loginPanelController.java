@@ -5,9 +5,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.input.MouseEvent;
+import pl.rr.project.s.UserEnvironmental;
 
-import javax.swing.*;
-import java.awt.*;
 import java.io.IOException;
 
 public class loginPanelController extends loginPanelMethods {
@@ -28,6 +27,7 @@ public class loginPanelController extends loginPanelMethods {
         }
         else
         {
+            UserEnvironmental.USERNAME=username_ID.getText();
             goToScene("/fxml/menuPanel.fxml", null, mouseEvent);
         }
     }

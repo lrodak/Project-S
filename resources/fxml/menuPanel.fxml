@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.rr.project.s.gui.menuPanel.menuPanelController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseMoved="#refresh" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.rr.project.s.gui.menuPanel.menuPanelController">
    <children>
       <Button fx:id="playButton" layoutX="246.0" layoutY="161.0" mnemonicParsing="false" onMouseEntered="#onMouseCarried" prefHeight="59.0" prefWidth="108.0" text="Play a game" />
       <AnchorPane prefHeight="83.0" prefWidth="211.0">
@@ -15,10 +15,10 @@
                <children>
                   <HBox prefHeight="83.0" prefWidth="284.0">
                      <children>
-                        <ImageView fitHeight="86.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fx:id="image" fitHeight="86.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true" />
                         <Label opacity="0.35" prefHeight="88.0" prefWidth="234.0" style="-fx-background-color: black;">
                            <graphic>
-                              <Label prefHeight="43.0" prefWidth="221.0" style="-fx-font-weight: bold;" text="Nick" textFill="#9fa2f5" wrapText="true">
+                              <Label fx:id="nick" prefHeight="43.0" prefWidth="221.0" style="-fx-font-weight: bold;" text="Nick" textFill="#9fa2f5" wrapText="true">
                                  <font>
                                     <Font size="30.0" />
                                  </font>
