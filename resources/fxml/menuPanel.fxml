@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseMoved="#refresh" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.rr.project.s.gui.menuPanel.menuPanelController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseMoved="#refresh" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: darkgrey;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.rr.project.s.gui.menuPanel.menuPanelController">
    <children>
       <Button fx:id="playButton" layoutX="246.0" layoutY="161.0" mnemonicParsing="false" onMouseEntered="#onMouseCarried" prefHeight="59.0" prefWidth="108.0" text="Play a game" />
       <AnchorPane prefHeight="83.0" prefWidth="211.0">
@@ -27,7 +27,7 @@
                         </Label>
                      </children>
                   </HBox>
-                  <Label prefHeight="76.0" prefWidth="289.0" text="I am very happy to pootis" />
+                  <Label prefHeight="76.0" prefWidth="289.0" style="-fx-background-color: grey;" text="I am very happy to pootis" />
                </children>
             </VBox>
             <Button fx:id="profileButton" mnemonicParsing="false" onMouseClicked="#goToProfile" opacity="0.0" prefHeight="85.0" prefWidth="284.0" />
