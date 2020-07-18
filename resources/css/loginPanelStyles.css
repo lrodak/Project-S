@@ -29,3 +29,18 @@
     -fx-background-color: #1b2838;
     -fx-border-color: #1b2838;
 }
+
+
+/* registerProfile */
+.radioButton .radio
+{
+    -fx-background-color : #1b2838;
+    -fx-border-color: white;
+    -fx-border-radius: 50%;
+}
+
+.radioButton:selected .radio .dot
+{
+    -fx-background-color: white;
+    -fx-background-insets: 0;
+}

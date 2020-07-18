@@ -4,6 +4,7 @@ import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.RadioButton;
 import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
@@ -11,26 +12,57 @@ import java.io.IOException;
 public class registerPanelController extends registerPanelMethods{
 
     @FXML
-    private javafx.scene.control.TextField username_ID;
+    private javafx.scene.control.TextField username;
     @FXML
-    private PasswordField password_ID;
+    private PasswordField password;
+
     @FXML
-    private Label invalid;
+    private Label invalidUser;
+    @FXML
+    private Label invalidPass;
+    @FXML
+    private Label invalidGen;
+
+    @FXML
+    private RadioButton maleGender;
+    @FXML
+    private RadioButton femaleGender;
 
     @FXML
     public void register(MouseEvent mouseEvent) throws IOException
     {
-        if(username_ID.getText().isEmpty() || password_ID.getText().isEmpty())
+        invalidUser.setVisible(false);
+        invalidPass.setVisible(false);
+        invalidGen.setVisible(false);
+
+        if(username.getText().isEmpty())
         {
-            invalid.setVisible(true);
+            invalidUser.setVisible(true);
         }
-        else
+        if(password.getText().isEmpty())
+        {
+            invalidPass.setVisible(true);
+        }
+        if(!maleGender.isSelected() && !femaleGender.isSelected())
+        {
+            invalidGen.setVisible(true);
+        }
+
+        if(!username.getText().isEmpty() && !password.getText().isEmpty() && (maleGender.isSelected() || femaleGender.isSelected()))
         {
             goToScene("/fxml/loginPanel.fxml", null, mouseEvent);
         }
 
     }
 
+    public void choiceGenderMale()
+    {
+        femaleGender.setSelected(false);
+    }
+    public void choiceGenderFemale()
+    {
+        maleGender.setSelected(false);
+    }
 
 
     @FXML
