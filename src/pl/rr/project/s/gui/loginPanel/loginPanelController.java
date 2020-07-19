@@ -12,25 +12,45 @@ import java.io.IOException;
 public class loginPanelController extends loginPanelMethods {
 
     @FXML
-     private javafx.scene.control.TextField username_ID;
+    private javafx.scene.control.TextField username;
     @FXML
-     private PasswordField password_ID;
+    private PasswordField password;
     @FXML
-    private Label invalid;
+    private Label invalidText;
+    @FXML
+    private Label registrationCompleteText;
+
 
     @FXML
     public void login(MouseEvent mouseEvent) throws IOException {
 
-        if(username_ID.getText().isEmpty() || password_ID.getText().isEmpty())
+        if(username.getText().isEmpty() || password.getText().isEmpty())
         {
-            invalid.setVisible(true);
+            invalidText.setVisible(true);
         }
         else
         {
-            UserEnvironmental.USERNAME=username_ID.getText();
+            UserEnvironmental.USERNAME= username.getText();
+            UserEnvironmental.REGISTRATION_COMPLETE = false;
             goToScene("/fxml/menuPanel.fxml", null, mouseEvent);
         }
     }
+
+    @FXML
+    public void registrationComplete() //active on mouse entered
+    {
+        if(UserEnvironmental.REGISTRATION_COMPLETE)
+        {
+            registrationCompleteText.setVisible(true);
+            username.setText(UserEnvironmental.TMPUSERNAME);
+            password.requestFocus();
+        }
+        else if(registrationCompleteText.isVisible())
+        {
+            registrationCompleteText.setVisible(false);
+        }
+    }
+
 
     @FXML
     public void goToRegister(MouseEvent mouseEvent) throws IOException {

@@ -24,7 +24,7 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-        <Button layoutX="169.0" layoutY="373.0" mnemonicParsing="false" onMouseClicked="#goLoginPanel" prefHeight="30.0" prefWidth="60.0" styleClass="button-login" text="Back" textFill="WHITE">
+        <Button layoutX="169.0" layoutY="373.0" mnemonicParsing="false" onMouseClicked="#backToLogin" prefHeight="30.0" prefWidth="60.0" styleClass="button-login" text="Back" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
@@ -40,7 +40,7 @@
             <cursor>
                 <Cursor fx:constant="HAND" />
             </cursor></Button>
-        <Label fx:id="invalidPass" layoutX="124.0" layoutY="250.0" text="Invalid password" textAlignment="CENTER" textFill="RED" visible="false">
+        <Label fx:id="invalidPassText" layoutX="124.0" layoutY="250.0" text="Invalid password" textAlignment="CENTER" textFill="RED" visible="false">
             <font>
                 <Font name="Arial Italic" size="12.0" />
             </font>
@@ -66,12 +66,12 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </RadioButton>
-      <Label fx:id="invalidUser" layoutX="124.0" layoutY="192.0" text="Invalid username" textAlignment="CENTER" textFill="RED" visible="false">
+      <Label fx:id="invalidUserText" layoutX="124.0" layoutY="192.0" text="Invalid username" textAlignment="CENTER" textFill="RED" visible="false">
          <font>
             <Font name="Arial Italic" size="12.0" />
          </font>
       </Label>
-      <Label fx:id="invalidGen" layoutX="124.0" layoutY="311.0" text="Invalid gender" textAlignment="CENTER" textFill="RED" visible="false">
+      <Label fx:id="invalidGenText" layoutX="124.0" layoutY="311.0" text="Invalid gender" textAlignment="CENTER" textFill="RED" visible="false">
          <font>
             <Font name="Arial Italic" size="12.0" />
          </font>
