@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Polyline?>
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
       prefWidth="600.0"
       scaleShape="false" styleClass="profile-main" stylesheets="@../css/profilePanelStyles.css"
       xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="pl.rr.project.s.gui.profilePanel.profilePanelController">
+      fx:controller="pl.rr.project.s.gui.profilePanel.ProfilePanelController">
    <Label layoutX="269.0" layoutY="41.0" text="It's you!"/>
    <Polyline fill="#464343" layoutX="55.0" layoutY="48.0" onMouseClicked="#goBackToMenu"
              points="-50.0, -22.0, 0.0, -48.0, 0.0, 7.0, -50.0, -22.0" strokeType="INSIDE"/>

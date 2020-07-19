@@ -5,13 +5,13 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import pl.rr.project.s.Scenes;
 import pl.rr.project.s.UserEnvironmental;
 
 import java.io.IOException;
 
-public class registerPanelController extends registerPanelMethods{
+public class RegisterPanelController extends RegisterPanelMethods {
 
     @FXML
     private javafx.scene.control.TextField username;
@@ -65,7 +65,7 @@ public class registerPanelController extends registerPanelMethods{
 
             UserEnvironmental.TMPUSERNAME = username.getText();
             UserEnvironmental.REGISTRATION_COMPLETE = true;
-            goToScene("/fxml/loginPanel.fxml", null, mouseEvent);
+            goToScene(Scenes.LOGIN_SCENE, null, mouseEvent);
 
         }
 
@@ -86,7 +86,7 @@ public class registerPanelController extends registerPanelMethods{
     @FXML
     public void backToLogin(MouseEvent mouseEvent) throws IOException {
         UserEnvironmental.REGISTRATION_COMPLETE = false;
-        goToScene("/fxml/loginPanel.fxml", null, mouseEvent);
+        goToScene(Scenes.LOGIN_SCENE, null, mouseEvent);
     }
 
     @FXML

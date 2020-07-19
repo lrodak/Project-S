@@ -5,11 +5,12 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.input.MouseEvent;
+import pl.rr.project.s.Scenes;
 import pl.rr.project.s.UserEnvironmental;
 
 import java.io.IOException;
 
-public class loginPanelController extends loginPanelMethods {
+public class LoginPanelController extends LoginPanelMethods {
 
     @FXML
     private javafx.scene.control.TextField username;
@@ -32,7 +33,7 @@ public class loginPanelController extends loginPanelMethods {
         {
             UserEnvironmental.USERNAME= username.getText();
             UserEnvironmental.REGISTRATION_COMPLETE = false;
-            goToScene("/fxml/menuPanel.fxml", null, mouseEvent);
+            goToScene(Scenes.MENU_SCENE, null, mouseEvent);
         }
     }
 
@@ -54,7 +55,7 @@ public class loginPanelController extends loginPanelMethods {
 
     @FXML
     public void goToRegister(MouseEvent mouseEvent) throws IOException {
-        goToScene("/fxml/registerPanel.fxml",null,mouseEvent);
+        goToScene(Scenes.REGISTER_SCENE,null,mouseEvent);
     }
 
     @FXML

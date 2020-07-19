@@ -7,12 +7,13 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import pl.rr.project.s.Scenes;
 import pl.rr.project.s.UserEnvironmental;
-import pl.rr.project.s.gui.loginPanel.loginPanelMethods;
+import pl.rr.project.s.gui.loginPanel.LoginPanelMethods;
 
 import java.io.IOException;
 
-public class menuPanelController extends loginPanelMethods {
+public class MenuPanelController extends LoginPanelMethods {
 
     @FXML
     private Button playButton;
@@ -23,7 +24,7 @@ public class menuPanelController extends loginPanelMethods {
 
     @FXML
     public void goToProfile(MouseEvent mouseEvent) throws IOException {
-        goToScene("/fxml/profilePanel.fxml", null, mouseEvent);
+        goToScene(Scenes.PROFILE_SCENE, null, mouseEvent);
     }
 
     @FXML
@@ -33,7 +34,7 @@ public class menuPanelController extends loginPanelMethods {
 
     @FXML
     public void logout(MouseEvent mouseEvent) throws IOException {
-        goToScene("/fxml/loginPanel.fxml", null, mouseEvent);
+        goToScene(Scenes.LOGIN_SCENE, null, mouseEvent);
     }
     @FXML
     public void refresh(MouseEvent event){
