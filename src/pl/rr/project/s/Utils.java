@@ -11,7 +11,7 @@ import java.io.*;
 
 
 //universal methods for multi-purpose
-public class Utils<daysOfWeek, items> {
+public class Utils {
 
     public void goToScene(String sceneName, Stage stage, MouseEvent event) throws IOException {
         Parent root = null;
@@ -32,12 +32,6 @@ public class Utils<daysOfWeek, items> {
         window.setScene(scene);
         window.show();
     }
-
-
-
-
-
-
 
     public void savePassword() {
         try {
