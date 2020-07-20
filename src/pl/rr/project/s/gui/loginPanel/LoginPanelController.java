@@ -29,12 +29,11 @@ public class LoginPanelController extends LoginPanelMethods {
         Platform.runLater(new Runnable() {
             @Override
             public void run() {
-
                 RememberPasswordBox.setSelected(UserEnvironmental.REMEMBER_PASSWORD);
 
                 if (UserEnvironmental.REGISTRATION_COMPLETE) {
                     registrationCompleteText.setVisible(true);
-                    username.setText(UserEnvironmental.TMPUSERNAME);
+                    username.setText(UserEnvironmental.USERNAME);
                     password.requestFocus();
                 } else if (registrationCompleteText.isVisible()) {
                     registrationCompleteText.setVisible(false);
@@ -45,13 +44,13 @@ public class LoginPanelController extends LoginPanelMethods {
 
     @FXML
     public void login(MouseEvent mouseEvent) throws IOException {
-
         if (username.getText().isEmpty() || password.getText().isEmpty()) {
             invalidText.setVisible(true);
-        } else {
-            UserEnvironmental.USERNAME = username.getText();
+        } else if (checkLogin(username.getText())) {
             UserEnvironmental.REGISTRATION_COMPLETE = false;
             goToScene(Scenes.MENU_SCENE, null, mouseEvent);
+        }else{
+            invalidText.setVisible(true);
         }
     }
 
@@ -69,5 +68,4 @@ public class LoginPanelController extends LoginPanelMethods {
     public void exitApplication() {
         Platform.exit();
     }
-
 }

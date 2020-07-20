@@ -1,7 +1,17 @@
 package pl.rr.project.s.gui.loginPanel;
 
+import pl.rr.project.s.UserEnvironmental;
 import pl.rr.project.s.Utils;
 
 public class LoginPanelMethods extends Utils {
-    //here you need to add methods from login panel if they do not use FXML
+    public boolean checkLogin(String username){
+        UserEnvironmental.USERNAME=username;
+        for (int i = 0; i<UserEnvironmental.userList.size(); i++){
+            String user = UserEnvironmental.userList.get(i);
+            if (username.equals(user)){
+                return true;
+            }
+        }
+        return false;
+    }
 }

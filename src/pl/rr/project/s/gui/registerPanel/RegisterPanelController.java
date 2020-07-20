@@ -17,14 +17,12 @@ public class RegisterPanelController extends RegisterPanelMethods {
     private javafx.scene.control.TextField username;
     @FXML
     private PasswordField password;
-
     @FXML
     private Label invalidUserText;
     @FXML
     private Label invalidPassText;
     @FXML
     private Label invalidGenText;
-
     @FXML
     private RadioButton maleGender;
     @FXML
@@ -38,48 +36,39 @@ public class RegisterPanelController extends RegisterPanelMethods {
         invalidGenText.setVisible(false);
         UserEnvironmental.REGISTRATION_COMPLETE = false;
 
-        if(username.getText().isEmpty())
-        {
+        if(username.getText().isEmpty()) {
             invalidUserText.setVisible(true);
         }
-        if(password.getText().isEmpty())
-        {
+        if(password.getText().isEmpty()) {
             invalidPassText.setVisible(true);
         }
-        if(!maleGender.isSelected() && !femaleGender.isSelected())
-        {
+        if(!maleGender.isSelected() && !femaleGender.isSelected()) {
             invalidGenText.setVisible(true);
         }
 
         //Register complete
-        if(!username.getText().isEmpty() && !password.getText().isEmpty() && (maleGender.isSelected() || femaleGender.isSelected()))
-        {
-            if(maleGender.isSelected())
-            {
+        if(!username.getText().isEmpty() && !password.getText().isEmpty() && (maleGender.isSelected() || femaleGender.isSelected())) {
+            if(maleGender.isSelected()) {
                 UserEnvironmental.GENDER = "Male";
             }
-            if(femaleGender.isSelected())
-            {
+            if(femaleGender.isSelected()) {
                 UserEnvironmental.GENDER = "Female";
             }
 
-            UserEnvironmental.TMPUSERNAME = username.getText();
+            UserEnvironmental.USERNAME = username.getText();
             UserEnvironmental.REGISTRATION_COMPLETE = true;
+            UserEnvironmental.userList.add(username.getText());
             goToScene(Scenes.LOGIN_SCENE, null, mouseEvent);
-
         }
-
     }
 
     @FXML
-    public void choiceGenderMale()
-    {
+    public void choiceGenderMale() {
         femaleGender.setSelected(false);
     }
 
     @FXML
-    public void choiceGenderFemale()
-    {
+    public void choiceGenderFemale() {
         maleGender.setSelected(false);
     }
 
