@@ -2,3 +2,10 @@
 {
     -fx-background-color:  #4682B4;
 }
+
+.header-style
+{
+    -fx-font-family: Arial;
+    -fx-font-size: 20px;
+    -fx-text-fill: lightcyan;
+}
