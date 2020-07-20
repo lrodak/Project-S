@@ -30,8 +30,20 @@
     -fx-border-color: #1b2838;
 }
 
+.check-box-password .box
+{
+    -fx-background-color: #1b2838;
+    -fx-border-color: white;
+    -fx-border-radius: 20%;
+}
 
-/* registerProfile */
+.check-box-password:selected .mark
+{
+    -fx-background-color: white;
+}
+
+
+/* registerPanel */
 .radioButton .radio
 {
     -fx-background-color : #1b2838;
