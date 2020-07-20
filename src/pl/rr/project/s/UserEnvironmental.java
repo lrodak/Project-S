@@ -8,6 +8,7 @@ public class UserEnvironmental {
     public static String GENDER;
 
     //register-login
+    public static Boolean REMEMBER_PASSWORD = Settings.RememberPassword;
     public static Boolean REGISTRATION_COMPLETE = false;
     public static String TMPUSERNAME;
 }

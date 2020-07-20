@@ -2,6 +2,7 @@ package pl.rr.project.s.gui.loginPanel;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.input.MouseEvent;
@@ -20,46 +21,52 @@ public class LoginPanelController extends LoginPanelMethods {
     private Label invalidText;
     @FXML
     private Label registrationCompleteText;
+    @FXML
+    private CheckBox RememberPasswordBox;
 
+    @FXML
+    public void initialize() {
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+
+                RememberPasswordBox.setSelected(UserEnvironmental.REMEMBER_PASSWORD);
+
+                if (UserEnvironmental.REGISTRATION_COMPLETE) {
+                    registrationCompleteText.setVisible(true);
+                    username.setText(UserEnvironmental.TMPUSERNAME);
+                    password.requestFocus();
+                } else if (registrationCompleteText.isVisible()) {
+                    registrationCompleteText.setVisible(false);
+                }
+            }
+        });
+    }
 
     @FXML
     public void login(MouseEvent mouseEvent) throws IOException {
 
-        if(username.getText().isEmpty() || password.getText().isEmpty())
-        {
+        if (username.getText().isEmpty() || password.getText().isEmpty()) {
             invalidText.setVisible(true);
-        }
-        else
-        {
-            UserEnvironmental.USERNAME= username.getText();
+        } else {
+            UserEnvironmental.USERNAME = username.getText();
             UserEnvironmental.REGISTRATION_COMPLETE = false;
             goToScene(Scenes.MENU_SCENE, null, mouseEvent);
         }
     }
 
     @FXML
-    public void registrationComplete() //active on mouse entered
-    {
-        if(UserEnvironmental.REGISTRATION_COMPLETE)
-        {
-            registrationCompleteText.setVisible(true);
-            username.setText(UserEnvironmental.TMPUSERNAME);
-            password.requestFocus();
-        }
-        else if(registrationCompleteText.isVisible())
-        {
-            registrationCompleteText.setVisible(false);
-        }
+    public void checkRememberPassword() {
+        UserEnvironmental.REMEMBER_PASSWORD = RememberPasswordBox.isSelected();
     }
-
 
     @FXML
     public void goToRegister(MouseEvent mouseEvent) throws IOException {
-        goToScene(Scenes.REGISTER_SCENE,null,mouseEvent);
+        goToScene(Scenes.REGISTER_SCENE, null, mouseEvent);
     }
 
     @FXML
-    public void exitApplication(MouseEvent event) {
+    public void exitApplication() {
         Platform.exit();
     }
 
