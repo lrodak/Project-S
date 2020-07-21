@@ -79,6 +79,7 @@ public class Utils {
         });
 
         window.setScene(scene);
+        window.centerOnScreen();
         window.show();
     }
 

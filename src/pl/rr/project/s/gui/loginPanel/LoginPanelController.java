@@ -49,9 +49,16 @@ public class LoginPanelController extends LoginPanelMethods {
         } else if (checkLogin(username.getText())) {
             UserEnvironmental.REGISTRATION_COMPLETE = false;
             goToScene(Scenes.MENU_SCENE, null, mouseEvent);
-        }else{
+        } else {
             invalidText.setVisible(true);
         }
+    }
+
+    @FXML
+    public void autoLogin(MouseEvent mouseEvent) throws IOException {
+        UserEnvironmental.USERNAME = "admin";
+        UserEnvironmental.GENDER = "Male";
+        goToScene(Scenes.MENU_SCENE, null, mouseEvent);
     }
 
     @FXML
