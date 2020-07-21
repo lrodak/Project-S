@@ -9,6 +9,8 @@ public class UserEnvironmental {
     public static String USERNAME;
     public static String GENDER;
     public static Image ADMIN_IMAGE = new Image("/images/admin.png");
+    public static Image WHITE_SOMETHING = new Image("/images/whitesomething.jpg");
+    public static int IMAGE_CHOSEN;
     public static List<String> userList = new ArrayList<>();
 
     //register-login

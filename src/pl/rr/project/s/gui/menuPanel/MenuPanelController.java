@@ -14,8 +14,6 @@ import pl.rr.project.s.gui.loginPanel.LoginPanelMethods;
 
 import java.io.IOException;
 
-import static java.awt.Color.black;
-
 public class MenuPanelController extends LoginPanelMethods {
 
     @FXML
@@ -26,6 +24,21 @@ public class MenuPanelController extends LoginPanelMethods {
     private ImageView image;
     @FXML
     private Label nick;
+
+    @FXML
+    public void initialize() {
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                if (UserEnvironmental.IMAGE_CHOSEN==0){
+                    image.setImage(UserEnvironmental.ADMIN_IMAGE);
+                }
+                else image.setImage(UserEnvironmental.WHITE_SOMETHING);
+
+                nick.setText(UserEnvironmental.USERNAME);
+            }
+        });
+    }
 
     @FXML
     public void goToProfile(MouseEvent mouseEvent) throws IOException {
@@ -43,11 +56,6 @@ public class MenuPanelController extends LoginPanelMethods {
     @FXML
     public void logout(MouseEvent mouseEvent) throws IOException {
         goToScene(Scenes.LOGIN_SCENE, null, mouseEvent);
-    }
-    @FXML
-    public void refresh(MouseEvent event){
-        image.setImage(UserEnvironmental.ADMIN_IMAGE);
-        nick.setText(UserEnvironmental.USERNAME);
     }
 
     @FXML
