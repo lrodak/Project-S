@@ -2,6 +2,7 @@ package pl.rr.project.s.gui.menuPanel;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.scene.Cursor;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tooltip;
@@ -13,10 +14,14 @@ import pl.rr.project.s.gui.loginPanel.LoginPanelMethods;
 
 import java.io.IOException;
 
+import static java.awt.Color.black;
+
 public class MenuPanelController extends LoginPanelMethods {
 
     @FXML
     private Button playButton;
+    @FXML
+    private Button gotoProfileButton;
     @FXML
     private ImageView image;
     @FXML
@@ -29,8 +34,11 @@ public class MenuPanelController extends LoginPanelMethods {
 
     @FXML
     public void onMouseCarried(MouseEvent mouseEvent) {
-        playButton.setTooltip(new Tooltip("Tooltip for Button"));
+
+        gotoProfileButton.setTooltip(new Tooltip("View my profile"));
+        gotoProfileButton.setCursor(Cursor.OPEN_HAND);
     }
+
 
     @FXML
     public void logout(MouseEvent mouseEvent) throws IOException {
