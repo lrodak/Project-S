@@ -6,27 +6,38 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.text.Font?>
 
+<?import javafx.scene.control.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+
+
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
       prefWidth="600.0"
       scaleShape="false" styleClass="profile-main" stylesheets="@../css/profilePanelStyles.css"
       xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="pl.rr.project.s.gui.profilePanel.ProfilePanelController">
-   <Label layoutX="269.0" layoutY="41.0" text="It's you!" styleClass="header-style"/>
-   <Polyline fill="#464343" layoutX="55.0" layoutY="48.0" onMouseClicked="#goBackToMenu"
-             points="-50.0, -22.0, 0.0, -48.0, 0.0, 7.0, -50.0, -22.0" strokeType="INSIDE"/>
-  <!-- <children>
+
+   <children>
+      <Label layoutX="269.0" layoutY="41.0" text="It's you!" styleClass="header-style"/>
+      <Polyline fill="#464343" layoutX="55.0" layoutY="48.0" onMouseClicked="#goBackToMenu"
+                points="-50.0, -22.0, 0.0, -48.0, 0.0, 7.0, -50.0, -22.0" strokeType="INSIDE"/>
+
       <ImageView fx:id="image" fitHeight="86.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true" />
-      <Label opacity="0.35" prefHeight="88.0" prefWidth="234.0" layoutX="0.0" layoutY="70.0" style="-fx-background-color: black;">
+      <Label opacity="0.35" prefHeight="88.0" prefWidth="234.0" style="-fx-background-color: black;" textAlignment="CENTER">
          <graphic>
-            <Label fx:id="nick" prefHeight="43.0" prefWidth="221.0" style="-fx-font-weight: bold;" text="Nick" textFill="#9fa2f5" wrapText="true">
+            <Label fx:id="nick" prefHeight="43.0" prefWidth="221.0" style="-fx-font-weight: bold;" text="Nick" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                <font>
                   <Font size="30.0" />
                </font>
             </Label>
          </graphic>
       </Label>
-   </children>-->
+   </children>
 </Pane>
 
 
