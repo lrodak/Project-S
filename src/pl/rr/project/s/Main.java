@@ -18,10 +18,8 @@ public class Main extends Application {
     public static void main(String[] args) {
         launch(args);
 
-
         String[] autoLoginObject = new String[2];
         autoLoginObject[0] = "Login";
         autoLoginObject[1] = "Haslo";
-
     }
 }
