@@ -15,7 +15,6 @@ public class LoginPanelMethods extends Utils {
             String user = UserEnvironmental.userList.get(i);
             if (username.equals(user)){
                 UserEnvironmental.IMAGE_CHOSEN=random;
-                System.out.println(random);
                 return true;
             }
         }

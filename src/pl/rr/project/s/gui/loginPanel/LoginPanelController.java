@@ -42,6 +42,9 @@ public class LoginPanelController extends LoginPanelMethods {
         });
     }
 
+    /**
+     * Just normal login
+     */
     @FXML
     public void login(MouseEvent mouseEvent) throws IOException {
         if (username.getText().isEmpty() || password.getText().isEmpty()) {
@@ -56,9 +59,10 @@ public class LoginPanelController extends LoginPanelMethods {
 
     @FXML
     public void autoLogin(MouseEvent mouseEvent) throws IOException {
-        UserEnvironmental.USERNAME = "admin";
+        username.setText("admin");
+        password.setText("admin");
         UserEnvironmental.GENDER = "Male";
-        goToScene(Scenes.MENU_SCENE, null, mouseEvent);
+        login(mouseEvent);
     }
 
     @FXML

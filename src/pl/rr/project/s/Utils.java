@@ -15,7 +15,36 @@ import java.io.*;
 //universal methods for multi-purpose
 public class Utils {
 
-    public void goToScene(Scenes sceneName, Stage stage, MouseEvent event) throws IOException {
+    public void goToScene(Scenes sceneName, Stage primaryStage, MouseEvent event) throws IOException {
+        Stage window;
+        if (primaryStage != null) {
+            window = primaryStage;
+            primaryStage.initStyle(StageStyle.UNDECORATED);
+            primaryStage.setResizable(false);
+        } else if (event != null) {
+            window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        } else {
+            throw new IOException();
+        }
+
+        window.setScene(setUsingScene(sceneName, window));
+
+        // center on screen
+        if (sceneName.equals(Scenes.MENU_SCENE) && !UserEnvironmental.INIT_MENU) {
+            window.centerOnScreen();
+            UserEnvironmental.INIT_MENU = true;
+        }else if (sceneName.equals(Scenes.LOGIN_SCENE) && !UserEnvironmental.INIT_LOGIN){
+            window.centerOnScreen();
+            UserEnvironmental.INIT_LOGIN = true;
+        }
+
+        window.show();
+    }
+
+    /**
+     * Set scene url and size
+     */
+    private Scene setUsingScene(Scenes sceneName, Stage window) throws IOException {
         Parent root = null;
         double x = 100;
         double y = 100;
@@ -25,10 +54,6 @@ public class Utils {
                 x = Settings.LoginPanelWith;
                 y = Settings.LoginPanelHigh;
                 root = FXMLLoader.load(getClass().getResource("/fxml/loginPanel.fxml"));
-                if (stage != null) {
-                    stage.initStyle(StageStyle.UNDECORATED);
-                    stage.setResizable(false);
-                }
                 break;
             case REGISTER_SCENE:
                 x = Settings.RegisterPanelWith;
@@ -46,31 +71,20 @@ public class Utils {
                 root = FXMLLoader.load(getClass().getResource("/fxml/profilePanel.fxml"));
                 break;
         }
-        Scene scene = new Scene(root, x, y);
 
-        Stage window;
-        if (stage != null) {
-            window = stage;
-//            scene.getStylesheets().add(getClass().getResource("/css/styles.css").toExternalForm());
-        } else if (event != null) {
-            window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        } else {
-            throw new IOException();
-        }
+        Scene currentScene = new Scene(root, x, y);
 
-        //Stage moving by mouse drag
+//        Stage moving by mouse drag
         final double[] xOffset = {0};
         final double[] yOffset = {0};
-
-        scene.setOnMousePressed(new EventHandler<MouseEvent>() {
+        currentScene.setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
                 xOffset[0] = event.getSceneX();
                 yOffset[0] = event.getSceneY();
             }
         });
-
-        scene.setOnMouseDragged(new EventHandler<MouseEvent>() {
+        currentScene.setOnMouseDragged(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
                 window.setX(event.getScreenX() - xOffset[0]);
@@ -78,9 +92,7 @@ public class Utils {
             }
         });
 
-        window.setScene(scene);
-        window.centerOnScreen();
-        window.show();
+        return currentScene;
     }
 
     public void savePassword() {

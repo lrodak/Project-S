@@ -54,6 +54,8 @@ public class MenuPanelController extends LoginPanelMethods {
 
     @FXML
     public void logout(MouseEvent mouseEvent) throws IOException {
+        UserEnvironmental.INIT_LOGIN=false;
+        UserEnvironmental.INIT_MENU=false;
         goToScene(Scenes.LOGIN_SCENE, null, mouseEvent);
     }
 
