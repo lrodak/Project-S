@@ -47,9 +47,8 @@ public class MenuPanelController extends LoginPanelMethods {
 
     @FXML
     public void onMouseCarried(MouseEvent mouseEvent) {
-
         gotoProfileButton.setTooltip(new Tooltip("View my profile"));
-        gotoProfileButton.setCursor(Cursor.OPEN_HAND);
+        gotoProfileButton.setCursor(Cursor.HAND);
     }
 
 

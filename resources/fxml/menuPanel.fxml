@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Circle?>
-<?import javafx.scene.shape.Rectangle?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" styleClass="panel-main" stylesheets="@../css/menuPanelStyles.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.rr.project.s.gui.menuPanel.MenuPanelController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#171a21" height="194.0" layoutX="3.0" layoutY="5.0" stroke="BLACK" strokeType="INSIDE" width="794.0" />
-      <Button fx:id="playButton" layoutX="346.0" layoutY="371.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="108.0" text="Play a game" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#171a21" height="203.0" layoutX="-3.0" layoutY="-4.0" stroke="BLACK" strokeType="INSIDE" width="806.0" />
       <AnchorPane prefHeight="83.0" prefWidth="211.0" translateX="15.0" translateY="200.0">
          <children>
             <VBox prefHeight="157.0" prefWidth="284.0">
@@ -32,13 +28,16 @@
                         </Label>
                      </children>
                   </HBox>
-                  <TextField prefHeight="81.0" prefWidth="284.0" />
+                  <TextField prefHeight="81.0" prefWidth="284.0" style="-fx-background-color: #3f4f73;" text="Text">
+                     <font>
+                        <Font name="Comic Sans MS" size="18.0" />
+                     </font></TextField>
                </children>
             </VBox>
             <Button fx:id="gotoProfileButton" mnemonicParsing="false" onMouseClicked="#goToProfile" onMouseEntered="#onMouseCarried" opacity="0.0" prefHeight="85.0" prefWidth="284.0" />
          </children>
       </AnchorPane>
-      <Button layoutX="15.0" layoutY="762.0" mnemonicParsing="false" onMouseClicked="#logout" text="Logout" />
+      <Button layoutX="15.0" layoutY="762.0" mnemonicParsing="false" onMouseClicked="#logout" text="Logout" textFill="WHITE" />
       <Button layoutX="746.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#exitApplication" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #171a21;" text="X" textFill="WHITE">
          <font>
             <Font name="Arial Bold" size="18.0" />
@@ -48,10 +47,11 @@
          </cursor></Button>
       <Label layoutX="702.0" layoutY="761.0" prefHeight="25.0" prefWidth="88.0" text="Version 1.0.0" textFill="WHITE" />
       <Circle fill="#0fae04" layoutX="693.0" layoutY="774.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
-      <ListView layoutX="593.0" layoutY="200.0" prefHeight="265.0" prefWidth="200.0" />
+      <ListView layoutX="593.0" layoutY="200.0" prefHeight="265.0" prefWidth="200.0" style="-fx-background-color: #3f4f73;" />
       <Label layoutX="201.0" layoutY="34.0" prefHeight="141.0" prefWidth="398.0" text="Project-S" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="96.0" />
          </font></Label>
+      <Button layoutX="306.0" layoutY="376.0" mnemonicParsing="false" prefHeight="71.0" prefWidth="133.0" stylesheets="@../css/menuPanelStyles.css" text="Play a  game!" textFill="WHITE" />
    </children>
 </Pane>
