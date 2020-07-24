@@ -35,10 +35,8 @@ public class MenuPanelController extends LoginPanelMethods {
         Platform.runLater(new Runnable() {
             @Override
             public void run() {
-                if (UserEnvironmental.IMAGE_CHOSEN==0){
-                    image.setImage(UserEnvironmental.ADMIN_IMAGE);
-                }
-                else image.setImage(UserEnvironmental.WHITE_SOMETHING);
+                //change avatar
+                setAvatar(image);
 
                 nick.setText(UserEnvironmental.USERNAME);
                 decriptionField.setText((UserEnvironmental.DESCRIPTION));

@@ -1,8 +1,12 @@
 package pl.rr.project.s.gui.loginPanel;
 
 import javafx.application.Platform;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.Cursor;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.input.MouseEvent;
@@ -24,6 +28,8 @@ public class LoginPanelController extends LoginPanelMethods {
     private Label registrationCompleteText;
     @FXML
     private CheckBox RememberPasswordBox;
+    @FXML
+    private ComboBox languageComboBox;
     GoToScene goToScene = new GoToScene();
 
     @FXML
@@ -31,8 +37,26 @@ public class LoginPanelController extends LoginPanelMethods {
         Platform.runLater(new Runnable() {
             @Override
             public void run() {
+                //Password checkBox remember
                 RememberPasswordBox.setSelected(UserEnvironmental.REMEMBER_PASSWORD);
 
+                //Language Combo Box
+                languageComboBox.getItems().add("ENG");
+                languageComboBox.getItems().add("PL");
+                languageComboBox.getSelectionModel().select(UserEnvironmental.LANGUAGE);
+                languageComboBox.getEditor().setCursor(Cursor.HAND);
+                EventHandler<ActionEvent> event =
+                        new EventHandler<ActionEvent>() {
+                            public void handle(ActionEvent e)
+                            {
+                                //Change language
+                                UserEnvironmental.LANGUAGE = languageComboBox.getValue().toString();
+                            }
+                        };
+                languageComboBox.setOnAction(event);
+
+
+                //Registration complete
                 if (UserEnvironmental.REGISTRATION_COMPLETE) {
                     registrationCompleteText.setVisible(true);
                     username.setText(UserEnvironmental.USERNAME);
@@ -44,9 +68,6 @@ public class LoginPanelController extends LoginPanelMethods {
         });
     }
 
-    /**
-     * Just normal login
-     */
     @FXML
     public void login(MouseEvent mouseEvent) throws IOException {
         if (username.getText().isEmpty() || password.getText().isEmpty()) {

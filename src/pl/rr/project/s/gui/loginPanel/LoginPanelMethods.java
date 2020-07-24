@@ -7,7 +7,7 @@ import java.util.Random;
 
 public class LoginPanelMethods extends Utils {
     Random rand = new Random();
-    int random = rand.nextInt(2);
+    int random = rand.nextInt(3);
 
     public boolean checkLogin(String username){
         UserEnvironmental.USERNAME=username;

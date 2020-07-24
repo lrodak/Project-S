@@ -10,8 +10,10 @@ public class UserEnvironmental {
     public static String USERNAME;
     public static String GENDER;
     public static Image ADMIN_IMAGE = new Image("/images/admin.png");
+    public static Image DOGO_IMAGE = new Image("/images/avatarDogo.png");
     public static Image WHITE_SOMETHING = new Image("/images/whitesomething.jpg");
     public static int IMAGE_CHOSEN;
+    public static String LANGUAGE = "ENG";
 
     //initialized scenes
     public static boolean INIT_LOGIN = false;

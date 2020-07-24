@@ -42,6 +42,30 @@
     -fx-background-color: white;
 }
 
+.combo-box-language
+{
+    -fx-background-color: #171a21;
+    -fx-mark-color: white;
+}
+
+.combo-box-language .list-cell
+{
+    -fx-background-color: #171a21;
+    -fx-text-fill: white;
+    -fx-font-family: Arial;
+    -fx-font-weight: bold;
+}
+
+.combo-box-language .list-view
+{
+    -fx-background-color: #171a21;
+}
+
+.combo-box-language .list-cell:hover
+{
+    -fx-background-color: #16212e;
+}
+
 
 /* registerPanel */
 .radioButton .radio

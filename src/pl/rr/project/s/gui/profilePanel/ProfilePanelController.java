@@ -2,9 +2,6 @@ package pl.rr.project.s.gui.profilePanel;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -40,10 +37,8 @@ public class ProfilePanelController extends ProfilePanelMethods {
         Platform.runLater(new Runnable() {
             @Override
             public void run() {
-                if (UserEnvironmental.IMAGE_CHOSEN==0){
-                    avatar1.setImage(UserEnvironmental.ADMIN_IMAGE);
-                }
-                else avatar1.setImage(UserEnvironmental.WHITE_SOMETHING);
+                //change avatar
+                setAvatar(avatar1);
 
                 username1.setText(UserEnvironmental.USERNAME);
                 description1.setText((UserEnvironmental.DESCRIPTION));
