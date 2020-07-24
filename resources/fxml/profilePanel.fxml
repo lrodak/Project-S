@@ -1,48 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.shape.Polyline?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.text.Font?>
-
 <?import javafx.scene.control.*?>
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Circle?>
-<?import javafx.scene.shape.Rectangle?>
-
-
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
-      prefWidth="600.0"
-      scaleShape="false" styleClass="profile-main" stylesheets="@../css/profilePanelStyles.css"
-      xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="pl.rr.project.s.gui.profilePanel.ProfilePanelController">
-
-   <children>
-      <Label layoutX="269.0" layoutY="41.0" text="It's you!" styleClass="header-style"/>
-      <Polyline fill="#464343" layoutX="55.0" layoutY="48.0" onMouseClicked="#goBackToMenu"
-                points="-50.0, -22.0, 0.0, -48.0, 0.0, 7.0, -50.0, -22.0" strokeType="INSIDE"/>
-
-      <ImageView fx:id="image" fitHeight="86.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true" />
-      <Label opacity="0.35" prefHeight="88.0" prefWidth="234.0" style="-fx-background-color: black;" textAlignment="CENTER">
-         <graphic>
-            <Label fx:id="nick" prefHeight="43.0" prefWidth="221.0" style="-fx-font-weight: bold;" text="Nick" textAlignment="CENTER" textFill="WHITE" wrapText="true">
-               <font>
-                  <Font size="30.0" />
-               </font>
-            </Label>
-         </graphic>
-      </Label>
-   </children>
-</Pane>
-
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
 <!--TODO:
-- czemu powrót nie działa
-- wyświetlić nick
-- wyświetlić avatar-->
+- zmienić rozmiar na defaultowy
+- dopasować TextFieldy do tła-->
 
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+      prefWidth="600.0" scaleShape="false" styleClass="profile-main" stylesheets="@../css/profilePanelStyles.css"
+      xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="pl.rr.project.s.gui.profilePanel.ProfilePanelController">
+   <HBox layoutX="440.0" layoutY="6.0" prefHeight="196.0" prefWidth="151.0">
+      <AnchorPane prefHeight="0.0" prefWidth="151.0">
+         <children>
+            <ImageView fx:id="avatar1" fitHeight="110.0" fitWidth="151.0" pickOnBounds="true" preserveRatio="true"/>
+            <TextField fx:id="username1" accessibleRole="TEXT" accessibleText="username" layoutY="110.0"
+                       maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="151.0"
+                       AnchorPane.bottomAnchor="46.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                       AnchorPane.topAnchor="110.0"/>
+            <TextField fx:id="description1" layoutY="150.0" prefHeight="40.0" prefWidth="151.0"/>
+         </children>
+      </AnchorPane>
+   </HBox>
+   <Separator layoutX="420.0" layoutY="-4.0" opacity="0.25" orientation="VERTICAL" prefHeight="408.0" prefWidth="23.0">
+      <effect>
+         <DropShadow/>
+      </effect>
+   </Separator>
+   <Polygon fill="DODGERBLUE" layoutX="11.0" layoutY="38.0" onMouseClicked="#goBackToMenu"
+            points="-4.400001525878906, -2.0, 49.99999237060547, 26.0, 49.99999237060547, -32.0" stroke="BLACK"
+            strokeType="INSIDE"/>
+   <TextField layoutX="190.0" layoutY="14.0" prefHeight="39.0" prefWidth="151.0" text="My Profile">
+      <font>
+         <Font name="Berlin Sans FB Demi Bold" size="18.0"/>
+      </font>
+   </TextField>
+</Pane>
