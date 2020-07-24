@@ -11,8 +11,8 @@ public class Settings {
     public static double MenuPanelWith=800.0;
     public static double MenuPanelHigh=800.0;
 
-    public static double ProfilePanelWith=600.0;
-    public static double ProfilePanelHigh=600.0;
+    public static double ProfilePanelWith=800.0;
+    public static double ProfilePanelHigh=800.0;
 
     //Login
     public static boolean RememberPassword = false;

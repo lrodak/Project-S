@@ -2,3 +2,12 @@
 {
     -fx-background-color:  #1b2838;
 }
+.button
+{
+    -fx-font-family: Arial;
+    -fx-font-weight: bold;
+    -fx-text-inner-color: white;
+    -fx-background-color: #16212e;
+    -fx-border-color: #c7d5e0;
+    -fx-border-radius: 5%;
+}

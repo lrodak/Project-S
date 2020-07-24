@@ -5,12 +5,14 @@ import javafx.fxml.FXML;
 import javafx.scene.Cursor;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import pl.rr.project.s.Scenes;
 import pl.rr.project.s.UserEnvironmental;
 import pl.rr.project.s.gui.loginPanel.LoginPanelMethods;
+import pl.rr.project.s.gui.scenes.GoToScene;
+import pl.rr.project.s.gui.scenes.SceneNames;
 
 import java.io.IOException;
 
@@ -24,6 +26,9 @@ public class MenuPanelController extends LoginPanelMethods {
     private ImageView image;
     @FXML
     private Label nick;
+    @FXML
+    private TextField decriptionField;
+    GoToScene goToScene = new GoToScene();
 
     @FXML
     public void initialize() {
@@ -36,26 +41,27 @@ public class MenuPanelController extends LoginPanelMethods {
                 else image.setImage(UserEnvironmental.WHITE_SOMETHING);
 
                 nick.setText(UserEnvironmental.USERNAME);
+                decriptionField.setText((UserEnvironmental.DESCRIPTION));
             }
         });
     }
 
     @FXML
     public void goToProfile(MouseEvent mouseEvent) throws IOException {
-        goToScene(Scenes.PROFILE_SCENE, null, mouseEvent);
+        goToScene.goToScene(SceneNames.PROFILE_SCENE, null, mouseEvent);
     }
 
     @FXML
     public void onMouseCarried(MouseEvent mouseEvent) {
-
         gotoProfileButton.setTooltip(new Tooltip("View my profile"));
-        gotoProfileButton.setCursor(Cursor.OPEN_HAND);
+        gotoProfileButton.setCursor(Cursor.HAND);
     }
-
 
     @FXML
     public void logout(MouseEvent mouseEvent) throws IOException {
-        goToScene(Scenes.LOGIN_SCENE, null, mouseEvent);
+        UserEnvironmental.INIT_LOGIN=false;
+        UserEnvironmental.INIT_MENU=false;
+        goToScene.goToScene(SceneNames.LOGIN_SCENE, null, mouseEvent);
     }
 
     @FXML

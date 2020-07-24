@@ -6,8 +6,9 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.input.MouseEvent;
-import pl.rr.project.s.Scenes;
 import pl.rr.project.s.UserEnvironmental;
+import pl.rr.project.s.gui.scenes.GoToScene;
+import pl.rr.project.s.gui.scenes.SceneNames;
 
 import java.io.IOException;
 
@@ -23,6 +24,7 @@ public class LoginPanelController extends LoginPanelMethods {
     private Label registrationCompleteText;
     @FXML
     private CheckBox RememberPasswordBox;
+    GoToScene goToScene = new GoToScene();
 
     @FXML
     public void initialize() {
@@ -42,13 +44,16 @@ public class LoginPanelController extends LoginPanelMethods {
         });
     }
 
+    /**
+     * Just normal login
+     */
     @FXML
     public void login(MouseEvent mouseEvent) throws IOException {
         if (username.getText().isEmpty() || password.getText().isEmpty()) {
             invalidText.setVisible(true);
         } else if (checkLogin(username.getText())) {
             UserEnvironmental.REGISTRATION_COMPLETE = false;
-            goToScene(Scenes.MENU_SCENE, null, mouseEvent);
+            goToScene.goToScene(SceneNames.MENU_SCENE, null, mouseEvent);
         } else {
             invalidText.setVisible(true);
         }
@@ -56,9 +61,10 @@ public class LoginPanelController extends LoginPanelMethods {
 
     @FXML
     public void autoLogin(MouseEvent mouseEvent) throws IOException {
-        UserEnvironmental.USERNAME = "admin";
+        username.setText("admin");
+        password.setText("admin");
         UserEnvironmental.GENDER = "Male";
-        goToScene(Scenes.MENU_SCENE, null, mouseEvent);
+        login(mouseEvent);
     }
 
     @FXML
@@ -68,7 +74,7 @@ public class LoginPanelController extends LoginPanelMethods {
 
     @FXML
     public void goToRegister(MouseEvent mouseEvent) throws IOException {
-        goToScene(Scenes.REGISTER_SCENE, null, mouseEvent);
+        goToScene.goToScene(SceneNames.REGISTER_SCENE, null, mouseEvent);
     }
 
     @FXML
