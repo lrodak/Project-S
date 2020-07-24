@@ -9,9 +9,10 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import pl.rr.project.s.Scenes;
 import pl.rr.project.s.UserEnvironmental;
 import pl.rr.project.s.gui.loginPanel.LoginPanelMethods;
+import pl.rr.project.s.gui.scenes.GoToScene;
+import pl.rr.project.s.gui.scenes.SceneNames;
 
 import java.io.IOException;
 
@@ -27,6 +28,7 @@ public class MenuPanelController extends LoginPanelMethods {
     private Label nick;
     @FXML
     private TextField decriptionField;
+    GoToScene goToScene = new GoToScene();
 
     @FXML
     public void initialize() {
@@ -46,7 +48,7 @@ public class MenuPanelController extends LoginPanelMethods {
 
     @FXML
     public void goToProfile(MouseEvent mouseEvent) throws IOException {
-        goToScene(Scenes.PROFILE_SCENE, null, mouseEvent);
+        goToScene.goToScene(SceneNames.PROFILE_SCENE, null, mouseEvent);
     }
 
     @FXML
@@ -55,12 +57,11 @@ public class MenuPanelController extends LoginPanelMethods {
         gotoProfileButton.setCursor(Cursor.HAND);
     }
 
-
     @FXML
     public void logout(MouseEvent mouseEvent) throws IOException {
         UserEnvironmental.INIT_LOGIN=false;
         UserEnvironmental.INIT_MENU=false;
-        goToScene(Scenes.LOGIN_SCENE, null, mouseEvent);
+        goToScene.goToScene(SceneNames.LOGIN_SCENE, null, mouseEvent);
     }
 
     @FXML

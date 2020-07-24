@@ -2,16 +2,19 @@ package pl.rr.project.s;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
+import pl.rr.project.s.gui.scenes.GoToScene;
+import pl.rr.project.s.gui.scenes.SceneNames;
 
 
 public class Main extends Application {
 
     public static Object autoLoginObject;
 
+
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Utils utils = new Utils();
-        utils.goToScene(Scenes.LOGIN_SCENE, primaryStage, null);
+        GoToScene goToScene = new GoToScene();
+        goToScene.goToScene(SceneNames.LOGIN_SCENE, primaryStage, null);
     }
 
 

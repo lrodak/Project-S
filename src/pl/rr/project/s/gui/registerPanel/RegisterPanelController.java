@@ -6,8 +6,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
 import javafx.scene.input.MouseEvent;
-import pl.rr.project.s.Scenes;
 import pl.rr.project.s.UserEnvironmental;
+import pl.rr.project.s.gui.scenes.GoToScene;
+import pl.rr.project.s.gui.scenes.SceneNames;
 
 import java.io.IOException;
 
@@ -27,6 +28,7 @@ public class RegisterPanelController extends RegisterPanelMethods {
     private RadioButton maleGender;
     @FXML
     private RadioButton femaleGender;
+    GoToScene goToScene = new GoToScene();
 
     @FXML
     public void register(MouseEvent mouseEvent) throws IOException
@@ -58,7 +60,7 @@ public class RegisterPanelController extends RegisterPanelMethods {
             UserEnvironmental.USERNAME = username.getText();
             UserEnvironmental.REGISTRATION_COMPLETE = true;
             UserEnvironmental.userList.add(username.getText());
-            goToScene(Scenes.LOGIN_SCENE, null, mouseEvent);
+            goToScene.goToScene(SceneNames.LOGIN_SCENE, null, mouseEvent);
         }
     }
 
@@ -75,7 +77,7 @@ public class RegisterPanelController extends RegisterPanelMethods {
     @FXML
     public void backToLogin(MouseEvent mouseEvent) throws IOException {
         UserEnvironmental.REGISTRATION_COMPLETE = false;
-        goToScene(Scenes.LOGIN_SCENE, null, mouseEvent);
+        goToScene.goToScene(SceneNames.LOGIN_SCENE, null, mouseEvent);
     }
 
     @FXML
