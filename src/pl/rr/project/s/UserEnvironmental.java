@@ -26,4 +26,8 @@ public class UserEnvironmental {
     static {
         userList.add("admin");
     }
+
+    //menu-profile
+    //add one static  description
+    public static String DESCRIPTION = "I am green";
 }

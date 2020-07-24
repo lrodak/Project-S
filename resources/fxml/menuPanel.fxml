@@ -19,7 +19,7 @@
                         <ImageView fx:id="image" fitHeight="86.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true" />
                         <Label opacity="0.35" prefHeight="88.0" prefWidth="234.0" style="-fx-background-color: black;" textAlignment="CENTER">
                            <graphic>
-                              <Label fx:id="nick" prefHeight="43.0" prefWidth="221.0" style="-fx-font-weight: bold;" text="Nick" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                              <Label fx:id="nick" alignment="CENTER" prefHeight="43.0" prefWidth="221.0" style="-fx-font-weight: bold;" text="Nick" textFill="WHITE" wrapText="true">
                                  <font>
                                     <Font size="30.0" />
                                  </font>
@@ -28,7 +28,7 @@
                         </Label>
                      </children>
                   </HBox>
-                  <TextField prefHeight="81.0" prefWidth="284.0" style="-fx-background-color: #3f4f73;" text="Text">
+                  <TextField fx:id="decriptionField" prefHeight="81.0" prefWidth="284.0" style="-fx-background-color: #3f4f73;" text="Text">
                      <font>
                         <Font name="Comic Sans MS" size="18.0" />
                      </font></TextField>
@@ -52,6 +52,6 @@
          <font>
             <Font size="96.0" />
          </font></Label>
-      <Button layoutX="306.0" layoutY="376.0" mnemonicParsing="false" prefHeight="71.0" prefWidth="133.0" stylesheets="@../css/menuPanelStyles.css" text="Play a  game!" textFill="WHITE" />
+      <Button layoutX="306.0" layoutY="376.0" mnemonicParsing="false" prefHeight="71.0" prefWidth="133.0" text="Play a  game!" textFill="WHITE" />
    </children>
 </Pane>

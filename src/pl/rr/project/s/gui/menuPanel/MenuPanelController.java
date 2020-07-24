@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.Cursor;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -24,6 +25,8 @@ public class MenuPanelController extends LoginPanelMethods {
     private ImageView image;
     @FXML
     private Label nick;
+    @FXML
+    private TextField decriptionField;
 
     @FXML
     public void initialize() {
@@ -36,6 +39,7 @@ public class MenuPanelController extends LoginPanelMethods {
                 else image.setImage(UserEnvironmental.WHITE_SOMETHING);
 
                 nick.setText(UserEnvironmental.USERNAME);
+                decriptionField.setText((UserEnvironmental.DESCRIPTION));
             }
         });
     }
