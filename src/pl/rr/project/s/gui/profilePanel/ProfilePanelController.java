@@ -33,6 +33,11 @@ public class ProfilePanelController extends ProfilePanelMethods {
     }
 
     @FXML
+    public void exitApplication(MouseEvent event) {
+        Platform.exit();
+    }
+
+    @FXML
     public void initialize() {
         Platform.runLater(new Runnable() {
             @Override
