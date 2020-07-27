@@ -1,4 +1,4 @@
-package pl.rr.project.s.languages;
+package pl.rr.project.s.language.languages;
 
 public class PL {
     public static String USERNAME = "Nazwa użytkownika";

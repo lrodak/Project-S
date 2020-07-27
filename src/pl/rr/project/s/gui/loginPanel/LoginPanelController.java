@@ -8,10 +8,10 @@ import javafx.scene.Cursor;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import pl.rr.project.s.UserEnvironmental;
-import pl.rr.project.s.Utils;
 import pl.rr.project.s.gui.scenes.GoToScene;
 import pl.rr.project.s.gui.scenes.SceneNames;
-import pl.rr.project.s.languages.LANG;
+import pl.rr.project.s.language.ChangeLanguage;
+import pl.rr.project.s.language.CurrentLanguage;
 
 import java.io.IOException;
 
@@ -59,17 +59,10 @@ public class LoginPanelController extends LoginPanelMethods {
                 languageComboBox.getEditor().setCursor(Cursor.HAND);
                 EventHandler<ActionEvent> event =
                         new EventHandler<ActionEvent>() {
-                            public void handle(ActionEvent e)
-                            {
+                            public void handle(ActionEvent e) {
                                 //Change language
                                 UserEnvironmental.LANGUAGE = languageComboBox.getValue().toString();
-
-                                if(languageComboBox.getValue().toString().equals("ENG")) {
-                                    Utils.changeLanguageToENG();
-                                }
-                                else if((languageComboBox.getValue().toString().equals("PL"))) {
-                                    Utils.changeLanguageToPL();
-                                }
+                                ChangeLanguage.changeLanguage(UserEnvironmental.LANGUAGE);
                                 setLabels();
                             }
                         };
@@ -126,11 +119,11 @@ public class LoginPanelController extends LoginPanelMethods {
     @FXML
     public void setLabels()
     {
-        usernameLabel.setText(LANG.USERNAME);
-        passwordLabel.setText(LANG.PASSWORD);
-        rememberPasswordBox.setText(LANG.REMEMBER_PASSWORD);
-        loginButton.setText(LANG.LOGIN);
-        cancelButton.setText(LANG.CANCEL);
-        CreateAccountButton.setText(LANG.CREATE_ACCOUNT);
+        usernameLabel.setText(CurrentLanguage.USERNAME);
+        passwordLabel.setText(CurrentLanguage.PASSWORD);
+        rememberPasswordBox.setText(CurrentLanguage.REMEMBER_PASSWORD);
+        loginButton.setText(CurrentLanguage.LOGIN);
+        cancelButton.setText(CurrentLanguage.CANCEL);
+        CreateAccountButton.setText(CurrentLanguage.CREATE_ACCOUNT);
     }
 }

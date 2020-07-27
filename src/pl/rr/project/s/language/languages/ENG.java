@@ -1,6 +1,6 @@
-package pl.rr.project.s.languages;
+package pl.rr.project.s.language.languages;
 
-public class LANG {
+public class ENG {
     public static String USERNAME = "Username";
     public static String PASSWORD = "Password";
     public static String REMEMBER_PASSWORD = "Remember password";
