@@ -2,9 +2,12 @@ package pl.rr.project.s.gui.profilePanel;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.VBox;
 import javafx.scene.shape.Polygon;
 import pl.rr.project.s.UserEnvironmental;
 import pl.rr.project.s.gui.scenes.GoToScene;
@@ -20,11 +23,13 @@ public class ProfilePanelController extends ProfilePanelMethods {
     @FXML
     private ImageView avatar1;
     @FXML
-    private TextField description1;
+    private Label description1;
     @FXML
-    private Polygon goback1;
+    private TextField description2;
     @FXML
-    private TextField myprofile1;
+    private Button savedescription1;
+    @FXML
+    private VBox descriptionchangepanel;
 
 
     @FXML
@@ -35,6 +40,18 @@ public class ProfilePanelController extends ProfilePanelMethods {
     @FXML
     public void exitApplication(MouseEvent event) {
         Platform.exit();
+    }
+
+    @FXML
+    public void changeDescription(MouseEvent event) {
+        descriptionchangepanel.setVisible(true);
+    }
+
+    @FXML
+    public void saveDescription(MouseEvent event) {
+        description1.setText(description2.getText());
+        UserEnvironmental.DESCRIPTION = description1.getText();
+        descriptionchangepanel.setVisible(false);
     }
 
     @FXML
