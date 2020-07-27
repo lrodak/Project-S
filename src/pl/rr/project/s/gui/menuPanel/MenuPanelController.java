@@ -36,7 +36,7 @@ public class MenuPanelController extends LoginPanelMethods {
             @Override
             public void run() {
                 //change avatar
-                setAvatar(image);
+                setAvatar(image,200,20);
 
                 nick.setText(UserEnvironmental.USERNAME);
                 decriptionField.setText((UserEnvironmental.DESCRIPTION));

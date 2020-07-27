@@ -3,19 +3,33 @@ package pl.rr.project.s;
 import javafx.scene.image.ImageView;
 
 import java.io.*;
+import java.util.Random;
 
 
 //universal methods for multi-purpose
 public class Utils {
 
-    public void setAvatar(ImageView avatar) {
-        if (UserEnvironmental.IMAGE_CHOSEN==0){
-            avatar.setImage(UserEnvironmental.ADMIN_IMAGE);
+    public void setAvatar(ImageView avatar, double x, double y) {
+        if (UserEnvironmental.FIRST_RANDOM_AVATAR) {
+            Random rand = new Random();
+            int random = rand.nextInt(3);
+
+            switch (random){
+                case 0:
+                    UserEnvironmental.SELECTED_IMAGE =UserEnvironmental.ADMIN_IMAGE;
+                    break;
+                case 1:
+                    UserEnvironmental.SELECTED_IMAGE =UserEnvironmental.WHITE_SOMETHING;
+                    break;
+                case 2:
+                    UserEnvironmental.SELECTED_IMAGE =UserEnvironmental.DOGO_IMAGE;
+                    break;
+            }
+            UserEnvironmental.FIRST_RANDOM_AVATAR=false;
         }
-        else if(UserEnvironmental.IMAGE_CHOSEN==1) {
-            avatar.setImage(UserEnvironmental.DOGO_IMAGE);
-        }
-        else avatar.setImage(UserEnvironmental.WHITE_SOMETHING);
+        avatar.setImage(UserEnvironmental.SELECTED_IMAGE);
+        avatar.setFitWidth(x);
+        avatar.setFitHeight(y);
     }
 
     public void savePassword() {

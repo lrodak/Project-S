@@ -9,13 +9,11 @@ public class UserEnvironmental {
     //login-menu-profile
     public static String USERNAME;
     public static String GENDER;
-    public static Image ADMIN_IMAGE = new Image("/images/admin.png");
-    public static Image DOGO_IMAGE = new Image("/images/avatarDogo.png");
-    public static Image WHITE_SOMETHING = new Image("/images/whitesomething.jpg");
-    public static int IMAGE_CHOSEN;
+    public static Image SELECTED_IMAGE;
     public static String LANGUAGE = "ENG";
+    public static Boolean FIRST_RANDOM_AVATAR = true;
 
-    //initialized scenes
+    //initialized scenes to center on screen only on init
     public static boolean INIT_LOGIN = false;
     public static boolean INIT_MENU = false;
 
@@ -32,4 +30,9 @@ public class UserEnvironmental {
     //menu-profile
     //add one static  description
     public static String DESCRIPTION = "I am green";
+
+    //IMAGES
+    public static Image ADMIN_IMAGE = new Image("/images/admin.png");
+    public static Image DOGO_IMAGE = new Image("/images/avatarDogo.png");
+    public static Image WHITE_SOMETHING = new Image("/images/whitesomething.jpg");
 }

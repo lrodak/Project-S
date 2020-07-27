@@ -43,7 +43,7 @@ public class ProfilePanelController extends ProfilePanelMethods {
             @Override
             public void run() {
                 //change avatar
-                setAvatar(avatar1);
+                setAvatar(avatar1,300,100);
 
                 username1.setText(UserEnvironmental.USERNAME);
                 description1.setText((UserEnvironmental.DESCRIPTION));
