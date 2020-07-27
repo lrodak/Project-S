@@ -1,6 +1,9 @@
 package pl.rr.project.s;
 
 import javafx.scene.image.ImageView;
+import pl.rr.project.s.languages.ENG;
+import pl.rr.project.s.languages.LANG;
+import pl.rr.project.s.languages.PL;
 
 import java.io.*;
 import java.util.Random;
@@ -52,4 +55,25 @@ public class Utils {
         }
     }
 
+
+    public static void changeLanguageToENG()
+    {
+        LANG.USERNAME = ENG.USERNAME;
+        LANG.PASSWORD = ENG.PASSWORD;
+        LANG.REMEMBER_PASSWORD = ENG.REMEMBER_PASSWORD;
+        LANG.LOGIN = ENG.LOGIN;
+        LANG.CANCEL = ENG.CANCEL;
+        LANG.CREATE_ACCOUNT = ENG.CREATE_ACCOUNT;
+    }
+
+    public static void changeLanguageToPL()
+    {
+        LANG.USERNAME = PL.USERNAME;
+        LANG.PASSWORD = PL.PASSWORD;
+        LANG.REMEMBER_PASSWORD = PL.REMEMBER_PASSWORD;
+        LANG.LOGIN = PL.LOGIN;
+        LANG.CANCEL = PL.CANCEL;
+        LANG.CREATE_ACCOUNT = PL.CREATE_ACCOUNT;
+    }
 }
+

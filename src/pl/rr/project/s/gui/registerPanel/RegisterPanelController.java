@@ -1,7 +1,11 @@
 package pl.rr.project.s.gui.registerPanel;
 
 import javafx.application.Platform;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.Cursor;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
@@ -28,7 +32,34 @@ public class RegisterPanelController extends RegisterPanelMethods {
     private RadioButton maleGender;
     @FXML
     private RadioButton femaleGender;
+    @FXML
+    private ComboBox languageComboBox;
     GoToScene goToScene = new GoToScene();
+
+
+    @FXML
+    public void initialize() {
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+
+                //Language Combo Box
+                languageComboBox.getItems().add("ENG");
+                languageComboBox.getItems().add("PL");
+                languageComboBox.getSelectionModel().select(UserEnvironmental.LANGUAGE);
+                languageComboBox.getEditor().setCursor(Cursor.HAND);
+                EventHandler<ActionEvent> event =
+                        new EventHandler<ActionEvent>() {
+                            public void handle(ActionEvent e)
+                            {
+                                //Change language
+                                UserEnvironmental.LANGUAGE = languageComboBox.getValue().toString();
+                            }
+                        };
+                languageComboBox.setOnAction(event);
+            }
+        });
+    }
 
     @FXML
     public void register(MouseEvent mouseEvent) throws IOException

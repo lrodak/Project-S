@@ -75,5 +75,9 @@
             <Font name="Arial Italic" size="12.0" />
          </font>
       </Label>
+        <ComboBox fx:id="languageComboBox" layoutX="294.0" layoutY="109.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="70.0" styleClass="combo-box-language">
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor></ComboBox>
     </children>
 </Pane>
