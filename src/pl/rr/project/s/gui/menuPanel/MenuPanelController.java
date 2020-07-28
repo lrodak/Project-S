@@ -9,6 +9,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import pl.rr.project.s.ApplicationSettings;
 import pl.rr.project.s.UserEnvironmental;
 import pl.rr.project.s.gui.loginPanel.LoginPanelMethods;
 import pl.rr.project.s.gui.scenes.SceneNames;
@@ -22,11 +23,16 @@ public class MenuPanelController extends LoginPanelMethods {
     @FXML
     private Button gotoProfileButton;
     @FXML
+    private Button logoutButton;
+    @FXML
     private ImageView image;
     @FXML
     private Label nick;
     @FXML
-    private TextField decriptionField;
+    private Label descriptionField;
+
+    @FXML
+    private Label versionField;
 
     @FXML
     public void initialize() {
@@ -34,10 +40,14 @@ public class MenuPanelController extends LoginPanelMethods {
             @Override
             public void run() {
                 //change avatar
-                setAvatar(image,200,20);
+                setAvatar(image,200,86);
 
                 nick.setText(UserEnvironmental.USERNAME);
-                decriptionField.setText((UserEnvironmental.DESCRIPTION));
+                descriptionField.setText((UserEnvironmental.DESCRIPTION));
+
+                playButton.setText(ApplicationSettings.getMessage("PLAY"));
+                logoutButton.setText(ApplicationSettings.getMessage("LOGOUT"));
+                versionField.setText(ApplicationSettings.getMessage("VERSION"));
             }
         });
     }
@@ -57,6 +67,7 @@ public class MenuPanelController extends LoginPanelMethods {
     public void logout(MouseEvent mouseEvent) throws IOException {
         UserEnvironmental.INIT_LOGIN=false;
         UserEnvironmental.INIT_MENU=false;
+        UserEnvironmental.FIRST_RANDOM_AVATAR = true;
         getSceneUtils().goToScene(SceneNames.LOGIN_SCENE, null, mouseEvent);
     }
 
@@ -64,4 +75,5 @@ public class MenuPanelController extends LoginPanelMethods {
     public void exitApplication(MouseEvent event) {
         Platform.exit();
     }
+
 }

@@ -29,7 +29,6 @@ public class UserEnvironmental {
     }
 
     //menu-profile
-    //add one static  description
     public static String DESCRIPTION = "I am green";
 
     //IMAGES
