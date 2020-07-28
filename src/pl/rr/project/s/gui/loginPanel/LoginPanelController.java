@@ -4,7 +4,6 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.Cursor;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import pl.rr.project.s.ApplicationSettings;
@@ -41,30 +40,23 @@ public class LoginPanelController extends LoginPanelMethods {
 
     @FXML
     public void initialize() {
+        setLabels();
+        //Language Combo Box
+        languageComboBox.getItems().add("EN");
+        languageComboBox.getItems().add("PL");
+        languageComboBox.getSelectionModel().select(UserEnvironmental.locale.toString().toUpperCase());
+
         Platform.runLater(new Runnable() {
             @Override
             public void run() {
-
-                setLabels();
-
                 //Password checkBox remember
                 rememberPasswordBox.setSelected(UserEnvironmental.REMEMBER_PASSWORD.equals("true"));
 
-                //Language Combo Box
-                {
-                    languageComboBox.getItems().add("en");
-                }
-                languageComboBox.getItems().add("pl");
-                languageComboBox.getSelectionModel().select(UserEnvironmental.LANGUAGE);
-                languageComboBox.getEditor().setCursor(Cursor.HAND);
                 EventHandler<ActionEvent> event =
                         new EventHandler<ActionEvent>() {
                             public void handle(ActionEvent e) {
                                 //Change language
-//                                UserEnvironmental.LANGUAGE = languageComboBox.getValue().toString();
-//                                ChangeLanguage.changeLanguage(UserEnvironmental.LANGUAGE);
-
-                                UserEnvironmental.locale = new Locale(languageComboBox.getValue().toString());
+                                UserEnvironmental.locale = new Locale(languageComboBox.getValue());
                                 setLabels();
                             }
                         };
@@ -104,7 +96,10 @@ public class LoginPanelController extends LoginPanelMethods {
 
     @FXML
     public void checkRememberPassword() {
-//        UserEnvironmental.REMEMBER_PASSWORD = rememberPasswordBox.isSelected();
+        if(rememberPasswordBox.isSelected())
+               UserEnvironmental.REMEMBER_PASSWORD = "true";
+        else
+            UserEnvironmental.REMEMBER_PASSWORD = "false";
     }
 
     @FXML
@@ -125,5 +120,7 @@ public class LoginPanelController extends LoginPanelMethods {
         loginButton.setText(ApplicationSettings.getMessage("LOGIN"));
         cancelButton.setText(ApplicationSettings.getMessage("CANCEL"));
         CreateAccountButton.setText(ApplicationSettings.getMessage("CREATE_ACCOUNT"));
+        registrationCompleteText.setText(ApplicationSettings.getMessage("REGISTRATION_COMPLETE"));
+        invalidText.setText(ApplicationSettings.getMessage("INVALID_USERNAME_PASSWORD"));
     }
 }

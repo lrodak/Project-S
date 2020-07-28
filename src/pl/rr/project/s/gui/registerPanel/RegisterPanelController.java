@@ -4,19 +4,27 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.Cursor;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.RadioButton;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
+import pl.rr.project.s.ApplicationSettings;
 import pl.rr.project.s.UserEnvironmental;
 import pl.rr.project.s.gui.scenes.SceneNames;
 
 import java.io.IOException;
+import java.util.Locale;
 
 public class RegisterPanelController extends RegisterPanelMethods {
 
+    @FXML
+    private Label usernameLabel;
+    @FXML
+    private Label passwordLabel;
+    @FXML
+    private Label genderLabel;
+    @FXML
+    private Button registerButton;
+    @FXML
+    private Button backButton;
     @FXML
     private javafx.scene.control.TextField username;
     @FXML
@@ -36,21 +44,22 @@ public class RegisterPanelController extends RegisterPanelMethods {
 
     @FXML
     public void initialize() {
+        setLabels();
+        //Language Combo Box
+        languageComboBox.getItems().add("EN");
+        languageComboBox.getItems().add("PL");
+        languageComboBox.getSelectionModel().select(UserEnvironmental.locale.toString().toUpperCase());
+
         Platform.runLater(new Runnable() {
             @Override
             public void run() {
-
-                //Language Combo Box
-                languageComboBox.getItems().add("ENG");
-                languageComboBox.getItems().add("PL");
-                languageComboBox.getSelectionModel().select(UserEnvironmental.LANGUAGE);
-                languageComboBox.getEditor().setCursor(Cursor.HAND);
                 EventHandler<ActionEvent> event =
                         new EventHandler<ActionEvent>() {
                             public void handle(ActionEvent e)
                             {
                                 //Change language
-                                UserEnvironmental.LANGUAGE = languageComboBox.getValue().toString();
+                                UserEnvironmental.locale = new Locale(languageComboBox.getValue());
+                                setLabels();
                             }
                         };
                 languageComboBox.setOnAction(event);
@@ -111,5 +120,19 @@ public class RegisterPanelController extends RegisterPanelMethods {
     @FXML
     public void exitApplication(MouseEvent event) {
         Platform.exit();
+    }
+
+    @FXML
+    public void setLabels() {
+        usernameLabel.setText(ApplicationSettings.getMessage("USERNAME"));
+        passwordLabel.setText(ApplicationSettings.getMessage("PASSWORD"));
+        genderLabel.setText(ApplicationSettings.getMessage("GENDER"));
+        maleGender.setText(ApplicationSettings.getMessage("MALE"));
+        femaleGender.setText(ApplicationSettings.getMessage("FEMALE"));
+        registerButton.setText(ApplicationSettings.getMessage("REGISTER"));
+        backButton.setText(ApplicationSettings.getMessage("BACK"));
+        invalidUserText.setText(ApplicationSettings.getMessage("INVALID_USERNAME"));
+        invalidPassText.setText(ApplicationSettings.getMessage("INVALID_PASSWORD"));
+        invalidGenText.setText(ApplicationSettings.getMessage("INVALID_GENDER"));
     }
 }

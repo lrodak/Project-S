@@ -11,7 +11,6 @@ public class UserEnvironmental {
     public static String USERNAME;
     public static String GENDER;
     public static Image SELECTED_IMAGE;
-    public static String LANGUAGE = "ENG";
     public static Boolean FIRST_RANDOM_AVATAR = true;
 
     //initialized scenes to center on screen only on init
