@@ -4,6 +4,7 @@ import javafx.scene.image.Image;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class UserEnvironmental {
     //login-menu-profile
@@ -18,7 +19,7 @@ public class UserEnvironmental {
     public static boolean INIT_MENU = false;
 
     //register-login
-    public static Boolean REMEMBER_PASSWORD = Settings.RememberPassword;
+    public static String REMEMBER_PASSWORD = ApplicationSettings.setSettings("RememberPassword");
     public static Boolean REGISTRATION_COMPLETE = false;
 
     //add one static admin user
@@ -35,4 +36,6 @@ public class UserEnvironmental {
     public static Image ADMIN_IMAGE = new Image("/images/admin.png");
     public static Image DOGO_IMAGE = new Image("/images/avatarDogo.png");
     public static Image WHITE_SOMETHING = new Image("/images/whitesomething.jpg");
+
+    public static Locale locale;
 }

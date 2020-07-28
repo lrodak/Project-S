@@ -10,11 +10,10 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import pl.rr.project.s.Settings;
 import pl.rr.project.s.UserEnvironmental;
-import pl.rr.project.s.Utils;
 
 import java.io.IOException;
 
-public class GoToScene extends Utils {
+public class SceneUtils {
     public void goToScene(SceneNames sceneName, Stage primaryStage, MouseEvent event) throws IOException {
         Stage window;
         if (primaryStage != null) {
@@ -51,13 +50,17 @@ public class GoToScene extends Utils {
 
         switch (sceneName) {
             case LOGIN_SCENE:
-                x = Settings.LoginPanelWith;
-                y = Settings.LoginPanelHigh;
+                  x = Settings.LoginPanelWith;
+                  y = Settings.LoginPanelHigh;
+//                x = ApplicationSettings.setSettings("LoginPanelWith");
+//                y = ApplicationSettings.setSettings("LoginPanelHigh");
                 root = FXMLLoader.load(getClass().getResource("/fxml/loginPanel.fxml"));
                 break;
             case REGISTER_SCENE:
                 x = Settings.RegisterPanelWith;
                 y = Settings.RegisterPanelHigh;
+//                x = ApplicationSettings.setSettings("RegisterPanelWith");
+//                y = ApplicationSettings.setSettings("RegisterPanelHigh");
                 root = FXMLLoader.load(getClass().getResource("/fxml/registerPanel.fxml"));
                 break;
             case MENU_SCENE:
@@ -71,8 +74,7 @@ public class GoToScene extends Utils {
                 root = FXMLLoader.load(getClass().getResource("/fxml/profilePanel.fxml"));
                 break;
         }
-
-        Scene currentScene = new Scene(root, x, y);
+        Scene currentScene = new Scene(root, x , y);
 
 //        Stage moving by mouse drag
         final double[] xOffset = {0};

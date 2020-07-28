@@ -1,13 +1,19 @@
 package pl.rr.project.s;
 
 import javafx.scene.image.ImageView;
+import pl.rr.project.s.gui.scenes.SceneUtils;
 
 import java.io.*;
 import java.util.Random;
 
 
 //universal methods for multi-purpose
-public class Utils {
+public class BasicMethods {
+    private final SceneUtils sceneUtils = new SceneUtils();
+
+    public SceneUtils getSceneUtils() {
+        return sceneUtils;
+    }
 
     public void setAvatar(ImageView avatar, double x, double y) {
         if (UserEnvironmental.FIRST_RANDOM_AVATAR) {
@@ -35,7 +41,7 @@ public class Utils {
     public void savePassword() {
         try {
             ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream("Passy.data"));
-            outputStream.writeObject(Main.autoLoginObject);
+            //outputStream.writeObject(Main.autoLoginObject);
         } catch (IOException ex) {
             System.out.println("Saving error");
             ex.printStackTrace();

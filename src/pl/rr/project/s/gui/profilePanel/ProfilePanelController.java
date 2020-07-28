@@ -8,15 +8,12 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
-import javafx.scene.shape.Polygon;
 import pl.rr.project.s.UserEnvironmental;
-import pl.rr.project.s.gui.scenes.GoToScene;
 import pl.rr.project.s.gui.scenes.SceneNames;
 
 import java.io.IOException;
 
 public class ProfilePanelController extends ProfilePanelMethods {
-    GoToScene goToScene = new GoToScene();
 
     @FXML
     private TextField username1;
@@ -34,7 +31,7 @@ public class ProfilePanelController extends ProfilePanelMethods {
 
     @FXML
     public void goBackToMenu(MouseEvent mouseEvent) throws IOException {
-        goToScene.goToScene(SceneNames.MENU_SCENE, null, mouseEvent);
+        getSceneUtils().goToScene(SceneNames.MENU_SCENE, null, mouseEvent);
     }
 
     @FXML

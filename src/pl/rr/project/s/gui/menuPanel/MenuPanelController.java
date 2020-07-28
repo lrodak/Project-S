@@ -11,7 +11,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import pl.rr.project.s.UserEnvironmental;
 import pl.rr.project.s.gui.loginPanel.LoginPanelMethods;
-import pl.rr.project.s.gui.scenes.GoToScene;
 import pl.rr.project.s.gui.scenes.SceneNames;
 
 import java.io.IOException;
@@ -28,7 +27,6 @@ public class MenuPanelController extends LoginPanelMethods {
     private Label nick;
     @FXML
     private TextField decriptionField;
-    GoToScene goToScene = new GoToScene();
 
     @FXML
     public void initialize() {
@@ -46,7 +44,7 @@ public class MenuPanelController extends LoginPanelMethods {
 
     @FXML
     public void goToProfile(MouseEvent mouseEvent) throws IOException {
-        goToScene.goToScene(SceneNames.PROFILE_SCENE, null, mouseEvent);
+        getSceneUtils().goToScene(SceneNames.PROFILE_SCENE, null, mouseEvent);
     }
 
     @FXML
@@ -59,7 +57,7 @@ public class MenuPanelController extends LoginPanelMethods {
     public void logout(MouseEvent mouseEvent) throws IOException {
         UserEnvironmental.INIT_LOGIN=false;
         UserEnvironmental.INIT_MENU=false;
-        goToScene.goToScene(SceneNames.LOGIN_SCENE, null, mouseEvent);
+        getSceneUtils().goToScene(SceneNames.LOGIN_SCENE, null, mouseEvent);
     }
 
     @FXML

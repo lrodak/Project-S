@@ -1,9 +1,9 @@
 package pl.rr.project.s.gui.loginPanel;
 
+import pl.rr.project.s.BasicMethods;
 import pl.rr.project.s.UserEnvironmental;
-import pl.rr.project.s.Utils;
 
-public class LoginPanelMethods extends Utils {
+public class LoginPanelMethods extends BasicMethods {
 
     public boolean checkLogin(String username){
         UserEnvironmental.USERNAME=username;
