@@ -73,6 +73,12 @@ public class SceneUtils {
                 y = Settings.ProfilePanelHigh;
                 root = FXMLLoader.load(getClass().getResource("/fxml/profilePanel.fxml"));
                 break;
+            case MINECRAFT_SCENE:
+                x = Settings.MinecraftPanelWith;
+                y = Settings.MinecraftPanelHigh;
+                root = FXMLLoader.load(getClass().getResource("/fxml/minecraftPanel.fxml"));
+                window.initStyle(StageStyle.DECORATED);
+                break;
         }
         Scene currentScene = new Scene(root, x , y);
 
