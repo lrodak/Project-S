@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
-
 <!--TODO:
 - dopasować TextFieldy do tła-->
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" scaleShape="false" style="-fx-background-color: #1b2838;" styleClass="profile-main" stylesheets="@../css/profilePanelStyles.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.rr.project.s.gui.profilePanel.ProfilePanelController">
+<?import javafx.scene.control.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.*?>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" scaleShape="false" style="-fx-background-color: #1b2838;" styleClass="profile-main" stylesheets="@profilePanelStyles.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.rr.project.s.gui.profilePanel.ProfilePanelController">
    <HBox layoutX="637.0" layoutY="222.0" prefHeight="196.0" prefWidth="151.0">
       <AnchorPane prefHeight="240.0" prefWidth="151.0">
          <ImageView fx:id="avatar1" fitHeight="110.0" fitWidth="151.0" pickOnBounds="true" preserveRatio="true" />

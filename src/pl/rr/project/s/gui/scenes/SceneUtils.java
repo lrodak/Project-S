@@ -54,29 +54,29 @@ public class SceneUtils {
                   y = Settings.LoginPanelHigh;
 //                x = ApplicationSettings.setSettings("LoginPanelWith");
 //                y = ApplicationSettings.setSettings("LoginPanelHigh");
-                root = FXMLLoader.load(getClass().getResource("/fxml/loginPanel.fxml"));
+                root = FXMLLoader.load(getClass().getResource("/pl/rr/project/s/gui/loginPanel/loginPanel.fxml"));
                 break;
             case REGISTER_SCENE:
                 x = Settings.RegisterPanelWith;
                 y = Settings.RegisterPanelHigh;
 //                x = ApplicationSettings.setSettings("RegisterPanelWith");
 //                y = ApplicationSettings.setSettings("RegisterPanelHigh");
-                root = FXMLLoader.load(getClass().getResource("/fxml/registerPanel.fxml"));
+                root = FXMLLoader.load(getClass().getResource("/pl/rr/project/s/gui/registerPanel/registerPanel.fxml"));
                 break;
             case MENU_SCENE:
                 x = Settings.MenuPanelWith;
                 y = Settings.MenuPanelHigh;
-                root = FXMLLoader.load(getClass().getResource("/fxml/menuPanel.fxml"));
+                root = FXMLLoader.load(getClass().getResource("/pl/rr/project/s/gui/menuPanel/menuPanel.fxml"));
                 break;
             case PROFILE_SCENE:
                 x = Settings.ProfilePanelWith;
                 y = Settings.ProfilePanelHigh;
-                root = FXMLLoader.load(getClass().getResource("/fxml/profilePanel.fxml"));
+                root = FXMLLoader.load(getClass().getResource("/pl/rr/project/s/gui/profilePanel/profilePanel.fxml"));
                 break;
             case MINECRAFT_SCENE:
                 x = Settings.MinecraftPanelWith;
                 y = Settings.MinecraftPanelHigh;
-                root = FXMLLoader.load(getClass().getResource("/fxml/minecraftPanel.fxml"));
+                root = FXMLLoader.load(getClass().getResource("/pl/rr/project/s/gui/games/minecraft/minecraftPanel.fxml"));
                 window.initStyle(StageStyle.DECORATED);
                 break;
         }
