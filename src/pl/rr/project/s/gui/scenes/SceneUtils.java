@@ -84,6 +84,11 @@ public class SceneUtils {
                 y = Settings.DinoPanelHigh;
                 root = FXMLLoader.load(getClass().getResource("/pl/rr/project/s/gui/games/dino/dinoPanel.fxml"));
                 break;
+            case FUTUREFORTUNE_SCENE:
+                x = Settings.FutureFortunePanelWith;
+                y = Settings.FutureFortunePanelHigh;
+                root = FXMLLoader.load(getClass().getResource("/pl/rr/project/s/gui/games/dino/futureFortunePanel.fxml"));
+                break;
         }
         Scene currentScene = new Scene(root, x, y);
 

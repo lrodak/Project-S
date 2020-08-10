@@ -20,6 +20,9 @@ public class Settings {
     public static double DinoPanelWith=800.0;
     public static double DinoPanelHigh=800.0;
 
+    public static double FutureFortunePanelWith=800.0;
+    public static double FutureFortunePanelHigh=800.0;
+
     //Login
     public static boolean RememberPassword = false;
 
