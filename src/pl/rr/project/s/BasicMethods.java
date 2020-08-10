@@ -18,20 +18,23 @@ public class BasicMethods {
     public void setAvatar(ImageView avatar, double x, double y) {
         if (UserEnvironmental.FIRST_RANDOM_AVATAR) {
             Random rand = new Random();
-            int random = rand.nextInt(3);
+            int random = rand.nextInt(4);
 
-            switch (random){
+            switch (random) {
                 case 0:
-                    UserEnvironmental.SELECTED_IMAGE =UserEnvironmental.ADMIN_IMAGE;
+                    UserEnvironmental.SELECTED_IMAGE = UserEnvironmental.ADMIN_IMAGE;
                     break;
                 case 1:
-                    UserEnvironmental.SELECTED_IMAGE =UserEnvironmental.WHITE_SOMETHING;
+                    UserEnvironmental.SELECTED_IMAGE = UserEnvironmental.WHITE_SOMETHING;
                     break;
                 case 2:
-                    UserEnvironmental.SELECTED_IMAGE =UserEnvironmental.DOGO_IMAGE;
+                    UserEnvironmental.SELECTED_IMAGE = UserEnvironmental.DOGO_IMAGE;
+                    break;
+                case 3:
+                    UserEnvironmental.SELECTED_IMAGE = UserEnvironmental.DINOSAUR_IMAGE;
                     break;
             }
-            UserEnvironmental.FIRST_RANDOM_AVATAR=false;
+            UserEnvironmental.FIRST_RANDOM_AVATAR = false;
         }
         avatar.setImage(UserEnvironmental.SELECTED_IMAGE);
         avatar.setFitWidth(x);

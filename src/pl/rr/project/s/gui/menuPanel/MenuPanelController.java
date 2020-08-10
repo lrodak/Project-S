@@ -19,18 +19,21 @@ import java.io.IOException;
 public class MenuPanelController extends LoginPanelMethods {
 
     @FXML
-    private Button playButton;
-    @FXML
     private Button gotoProfileButton;
     @FXML
     private Button logoutButton;
     @FXML
     private ImageView image;
     @FXML
+    private ImageView dinoImage;
+    @FXML
     private Label nick;
     @FXML
     private Label descriptionField;
-
+    @FXML
+    private Button gotoDinoButton;
+    @FXML
+    private Button gotoMinecraftButton;
     @FXML
     private Label versionField;
 
@@ -41,11 +44,10 @@ public class MenuPanelController extends LoginPanelMethods {
             public void run() {
                 //change avatar
                 setAvatar(image,200,86);
-
+//                dinoImage.setImage(UserEnvironmental.DINO_IMAGE);
                 nick.setText(UserEnvironmental.USERNAME);
                 descriptionField.setText((UserEnvironmental.DESCRIPTION));
 
-                playButton.setText(ApplicationSettings.getMessage("PLAY"));
                 logoutButton.setText(ApplicationSettings.getMessage("LOGOUT"));
                 versionField.setText(ApplicationSettings.getMessage("VERSION"));
             }
@@ -57,6 +59,14 @@ public class MenuPanelController extends LoginPanelMethods {
         getSceneUtils().goToScene(SceneNames.PROFILE_SCENE, null, mouseEvent);
     }
 
+    @FXML
+    public void goToDino(MouseEvent mouseEvent) throws IOException {
+        getSceneUtils().goToScene(SceneNames.DINO_SCENE, null, mouseEvent);
+    }
+    @FXML
+    public void goToMinecraft(MouseEvent mouseEvent) throws IOException {
+        getSceneUtils().goToScene(SceneNames.MINECRAFT_SCENE, null, mouseEvent);
+    }
     @FXML
     public void onMouseCarried(MouseEvent mouseEvent) {
         gotoProfileButton.setTooltip(new Tooltip("View my profile"));

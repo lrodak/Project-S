@@ -17,6 +17,9 @@ public class Settings {
     public static double MinecraftPanelWith=1000.0;
     public static double MinecraftPanelHigh=700.0;
 
+    public static double DinoPanelWith=800.0;
+    public static double DinoPanelHigh=800.0;
+
     //Login
     public static boolean RememberPassword = false;
 

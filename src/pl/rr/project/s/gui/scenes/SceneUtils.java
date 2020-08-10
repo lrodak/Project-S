@@ -32,7 +32,7 @@ public class SceneUtils {
         if (sceneName.equals(SceneNames.MENU_SCENE) && !UserEnvironmental.INIT_MENU) {
             window.centerOnScreen();
             UserEnvironmental.INIT_MENU = true;
-        }else if (sceneName.equals(SceneNames.LOGIN_SCENE) && !UserEnvironmental.INIT_LOGIN){
+        } else if (sceneName.equals(SceneNames.LOGIN_SCENE) && !UserEnvironmental.INIT_LOGIN) {
             window.centerOnScreen();
             UserEnvironmental.INIT_LOGIN = true;
         }
@@ -50,8 +50,8 @@ public class SceneUtils {
 
         switch (sceneName) {
             case LOGIN_SCENE:
-                  x = Settings.LoginPanelWith;
-                  y = Settings.LoginPanelHigh;
+                x = Settings.LoginPanelWith;
+                y = Settings.LoginPanelHigh;
 //                x = ApplicationSettings.setSettings("LoginPanelWith");
 //                y = ApplicationSettings.setSettings("LoginPanelHigh");
                 root = FXMLLoader.load(getClass().getResource("/pl/rr/project/s/gui/loginPanel/loginPanel.fxml"));
@@ -79,8 +79,13 @@ public class SceneUtils {
                 root = FXMLLoader.load(getClass().getResource("/pl/rr/project/s/gui/games/minecraft/minecraftPanel.fxml"));
                 window.initStyle(StageStyle.DECORATED);
                 break;
+            case DINO_SCENE:
+                x = Settings.DinoPanelWith;
+                y = Settings.DinoPanelHigh;
+                root = FXMLLoader.load(getClass().getResource("/pl/rr/project/s/gui/games/dino/dinoPanel.fxml"));
+                break;
         }
-        Scene currentScene = new Scene(root, x , y);
+        Scene currentScene = new Scene(root, x, y);
 
 //        Stage moving by mouse drag
         final double[] xOffset = {0};

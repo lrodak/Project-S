@@ -34,6 +34,7 @@ public class UserEnvironmental {
     public static Image ADMIN_IMAGE = new Image("/images/admin.png");
     public static Image DOGO_IMAGE = new Image("/images/avatarDogo.png");
     public static Image WHITE_SOMETHING = new Image("/images/whitesomething.jpg");
+    public static Image DINOSAUR_IMAGE = new Image("/images/dinosaur.jpg");
 
     public static Locale locale;
 }

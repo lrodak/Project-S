@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Circle?>
-<?import javafx.scene.shape.Rectangle?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" styleClass="panel-main" stylesheets="@menuPanelStyles.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.rr.project.s.gui.menuPanel.MenuPanelController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#171a21" height="203.0" layoutX="-3.0" layoutY="-4.0" stroke="BLACK" strokeType="INSIDE" width="806.0" />
@@ -56,6 +53,21 @@
          <font>
             <Font size="96.0" />
          </font></Label>
-      <Button fx:id="playButton" layoutX="306.0" layoutY="376.0" mnemonicParsing="false" prefHeight="71.0" prefWidth="133.0" text="Play a  game!" textFill="WHITE" />
+      <HBox layoutX="24.0" layoutY="495.0" prefHeight="76.0" prefWidth="755.0" styleClass="split-panel">
+         <children>
+            <ImageView fitHeight="70.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="gotoMinecraftButton" mnemonicParsing="false" onMouseClicked="#goToMinecraft" prefHeight="85.0" prefWidth="100.0" text="Minecraft" textFill="WHITE" />
+            <SplitPane prefHeight="71.0" prefWidth="12.0" style="-fx-background-color: black;" />
+            <ImageView fx:id="dinoImage" fitHeight="74.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="gotoDinoButton" mnemonicParsing="false" onMouseClicked="#goToDino" prefHeight="77.0" prefWidth="100.0" text="Dino" textFill="WHITE" />
+            <SplitPane layoutX="161.0" layoutY="11.0" prefHeight="71.0" prefWidth="12.0" style="-fx-background-color: black;" />
+            <ImageView fitHeight="74.0" fitWidth="50.0" layoutX="173.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="playButton1" layoutX="61.0" layoutY="11.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="100.0" text="Game3" textFill="WHITE" />
+            <SplitPane layoutX="161.0" layoutY="11.0" prefHeight="71.0" prefWidth="12.0" style="-fx-background-color: black;" />
+            <ImageView fitHeight="70.0" fitWidth="50.0" layoutX="11.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="playButton2" layoutX="61.0" layoutY="11.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="100.0" text="Game4" textFill="WHITE" />
+            <SplitPane layoutX="161.0" layoutY="11.0" prefHeight="71.0" prefWidth="12.0" style="-fx-background-color: black;" />
+         </children>
+      </HBox>
    </children>
 </Pane>

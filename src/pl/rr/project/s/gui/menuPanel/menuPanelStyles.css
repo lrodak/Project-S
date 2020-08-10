@@ -11,3 +11,8 @@
     -fx-border-color: #c7d5e0;
     -fx-border-radius: 5%;
 }
+
+.split-panel
+{
+    -fx-background-color:  #1b2838;
+}
