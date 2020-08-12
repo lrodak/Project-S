@@ -23,9 +23,11 @@ public class UserEnvironmental {
 
     //add one static admin user
     public static List<String> userList = new ArrayList<>();
+
     static {
         userList.add("admin");
     }
+
 
     //menu-profile
     public static String DESCRIPTION = "I am green";
@@ -35,7 +37,12 @@ public class UserEnvironmental {
     public static Image DOGO_IMAGE = new Image("/images/avatarDogo.png");
     public static Image WHITE_SOMETHING = new Image("/images/whitesomething.jpg");
     public static Image DINOSAUR_IMAGE = new Image("/images/dinosaur.jpg");
-    public static Image PANDA_IMAGE = new Image("/images/panda-avatar.jpg");
+
+    //temporary
+    public static Image PANDA_IMAGE = new Image("/images/dinosaur.jpg");
+//    public static Image PANDA_IMAGE = new Image("/images/panda-avatar.jpg");
+
+    public static final Image[] IMAGE_LIST = {ADMIN_IMAGE, DOGO_IMAGE, WHITE_SOMETHING, DINOSAUR_IMAGE, PANDA_IMAGE};
 
     public static Locale locale;
 }

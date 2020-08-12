@@ -19,24 +19,7 @@ public class BasicMethods {
         if (UserEnvironmental.FIRST_RANDOM_AVATAR) {
             Random rand = new Random();
             int random = rand.nextInt(5);
-
-            switch (random) {
-                case 0:
-                    UserEnvironmental.SELECTED_IMAGE = UserEnvironmental.ADMIN_IMAGE;
-                    break;
-                case 1:
-                    UserEnvironmental.SELECTED_IMAGE = UserEnvironmental.WHITE_SOMETHING;
-                    break;
-                case 2:
-                    UserEnvironmental.SELECTED_IMAGE = UserEnvironmental.DOGO_IMAGE;
-                    break;
-                case 3:
-                    UserEnvironmental.SELECTED_IMAGE = UserEnvironmental.DINOSAUR_IMAGE;
-                    break;
-                case 4:
-                    UserEnvironmental.SELECTED_IMAGE = UserEnvironmental.PANDA_IMAGE;
-                    break;
-            }
+            UserEnvironmental.SELECTED_IMAGE = UserEnvironmental.IMAGE_LIST[random];
             UserEnvironmental.FIRST_RANDOM_AVATAR = false;
         }
         avatar.setImage(UserEnvironmental.SELECTED_IMAGE);
