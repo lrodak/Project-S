@@ -3,32 +3,39 @@
 <!--TODO:
 - dopasować TextFieldy do tła-->
 
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.Polygon?>
-<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" scaleShape="false" style="-fx-background-color: #1b2838;" styleClass="profile-main" stylesheets="@profilePanelStyles.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.rr.project.s.gui.profilePanel.ProfilePanelController">
-   <HBox layoutX="637.0" layoutY="222.0" prefHeight="196.0" prefWidth="151.0">
-      <AnchorPane prefHeight="240.0" prefWidth="151.0">
-         <ImageView fx:id="avatar1" fitHeight="110.0" fitWidth="151.0" pickOnBounds="true" preserveRatio="true" />
-         <TextField fx:id="username1" accessibleRole="TEXT" accessibleText="username" layoutY="110.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="151.0" promptText="username" />
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" scaleShape="false" style="-fx-background-color: #1b2838;" styleClass="profile-main" stylesheets="@profilePanelStyles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.rr.project.s.gui.profilePanel.ProfilePanelController">
+   <HBox layoutX="611.0" layoutY="220.0" prefHeight="196.0" prefWidth="151.0">
+      <AnchorPane prefHeight="216.0" prefWidth="151.0">
+         <ImageView fx:id="avatar1" fitHeight="110.0" fitWidth="113.0" layoutX="19.0" onMouseClicked="#changeAvatar" pickOnBounds="true" preserveRatio="true" />
          <TextField fx:id="changedescription1" layoutY="150.0" prefHeight="78.0" prefWidth="151.0" style="visibility: false;">
             <font>
                <Font name="Berlin Sans FB Demi Bold" size="18.0" />
             </font>
          </TextField>
-         <Label fx:id="description1" layoutX="-2.0" layoutY="150.0" prefHeight="77.0" prefWidth="151.0" text="Description" textFill="WHITE" wrapText="true">
+         <Label fx:id="description1" alignment="TOP_LEFT" layoutY="138.0" prefHeight="69.0" prefWidth="151.0" text="Description" textFill="WHITE" wrapText="true">
             <font>
                <Font size="14.0" />
             </font>
          </Label>
+         <Label fx:id="username1" layoutY="104.0" prefHeight="33.0" prefWidth="151.0" text="Username" textFill="WHITE">
+            <font>
+               <Font size="17.0" />
+            </font>
+         </Label>
+         <Button layoutY="202.0" mnemonicParsing="false" onMouseClicked="#changeDescription" prefHeight="25.0" prefWidth="151.0" style="-fx-background-color: #2c415a;" text="Change description" textFill="WHITE" />
+<!--         <Polygon fx:id="avatar_right" fill="#10508c" layoutX="88.0" layoutY="29.0" points="77.0, 25.600006103515625, 50.0, 38.20001220703125, 50.0, 13.0" stroke="BLACK" strokeType="INSIDE" />-->
+<!--         <Polygon fx:id="avatar_left" fill="#10508c" layoutX="15.0" layoutY="102.0" points="-30.0, -47.79998779296875, 0.0, -34.79998779296875, 0.0, -60.0" stroke="BLACK" strokeType="INSIDE" />-->
       </AnchorPane>
    </HBox>
-   <Separator layoutX="614.0" layoutY="200.0" opacity="0.25" orientation="VERTICAL" prefHeight="600.0" prefWidth="23.0">
+   <Separator layoutX="571.0" layoutY="193.0" opacity="0.25" orientation="VERTICAL" prefHeight="600.0" prefWidth="23.0">
       <effect>
          <DropShadow />
       </effect>
@@ -40,28 +47,31 @@
       </font>
    </Label>
    <Pane prefHeight="200.0" prefWidth="800.0">
-      <children>
-         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#171a21" height="200.0" stroke="BLACK" strokeType="INSIDE" width="800.0" />
-         <Label layoutX="201.0" layoutY="34.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="141.0" prefWidth="398.0" text="Project-S" textAlignment="CENTER" textFill="WHITE">
-            <font>
-               <Font size="96.0" />
-            </font>
-         </Label>
-         <Button layoutX="746.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#exitApplication" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #171a21;" text="X" textFill="WHITE">
-            <font>
-               <Font name="Arial Bold" size="18.0" />
-            </font>
-            <cursor>
-               <Cursor fx:constant="HAND" />
-            </cursor>
-         </Button>
-      </children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#171a21" height="200.0" layoutY="-6.0" stroke="BLACK"
+                 strokeType="INSIDE" width="800.0"/>
+      <Label layoutX="201.0" layoutY="34.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+             minWidth="-Infinity" prefHeight="141.0" prefWidth="398.0" text="Project-S" textAlignment="CENTER"
+             textFill="WHITE">
+         <font>
+            <Font size="96.0"/>
+         </font>
+      </Label>
+      <Button layoutX="746.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#exitApplication" prefHeight="40.0"
+              prefWidth="40.0" style="-fx-background-color: #171a21;" text="X" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="18.0"/>
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND"/>
+         </cursor>
+      </Button>
    </Pane>
-   <Button layoutX="637.0" layoutY="446.0" mnemonicParsing="false" onMouseClicked="#changeDescription" prefHeight="25.0" prefWidth="151.0" style="-fx-background-color: #2c415a;" text="Change description" textFill="WHITE" />
-   <VBox fx:id="descriptionchangepanel" layoutX="637.0" layoutY="480.0" prefHeight="94.0" prefWidth="151.0" style="visibility: false;">
-      <children>
-         <TextField fx:id="description2" prefHeight="93.0" prefWidth="151.0" promptText="description" />
-         <Button mnemonicParsing="false" onMouseClicked="#saveDescription" prefHeight="25.0" prefWidth="151.0" style="-fx-background-color: #2c415a;" text="Save" textFill="WHITE" />
-      </children>
+   <VBox fx:id="descriptionchangepanel" layoutX="611.0" layoutY="455.0" prefHeight="87.0" prefWidth="151.0"
+         style="visibility: false;">
+      <TextField fx:id="description2" prefHeight="66.0" prefWidth="151.0" promptText="description"/>
+      <Button mnemonicParsing="false" onMouseClicked="#saveDescription" prefHeight="25.0" prefWidth="151.0"
+              style="-fx-background-color: #2c415a;" text="Save" textFill="WHITE"/>
    </VBox>
+   <Polygon fill="DODGERBLUE" layoutX="337.0" layoutY="410.0" points="257.0, -127.79998779296875, 274.0, -120.79998779296875, 274.0, -134.79998779296875" stroke="BLACK" strokeType="INSIDE" />
+   <Polygon fill="DODGERBLUE" layoutX="310.0" layoutY="440.0" points="452.199951171875, -157.20001220703125, 433.0, -150.20001220703125, 433.0, -165.0" stroke="BLACK" strokeType="INSIDE" />
 </Pane>

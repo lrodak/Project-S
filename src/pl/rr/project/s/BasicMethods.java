@@ -18,7 +18,7 @@ public class BasicMethods {
     public void setAvatar(ImageView avatar, double x, double y) {
         if (UserEnvironmental.FIRST_RANDOM_AVATAR) {
             Random rand = new Random();
-            int random = rand.nextInt(4);
+            int random = rand.nextInt(5);
 
             switch (random) {
                 case 0:
@@ -32,6 +32,9 @@ public class BasicMethods {
                     break;
                 case 3:
                     UserEnvironmental.SELECTED_IMAGE = UserEnvironmental.DINOSAUR_IMAGE;
+                    break;
+                case 4:
+                    UserEnvironmental.SELECTED_IMAGE = UserEnvironmental.PANDA_IMAGE;
                     break;
             }
             UserEnvironmental.FIRST_RANDOM_AVATAR = false;

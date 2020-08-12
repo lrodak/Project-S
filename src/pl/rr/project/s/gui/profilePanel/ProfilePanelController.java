@@ -11,12 +11,13 @@ import javafx.scene.layout.VBox;
 import pl.rr.project.s.UserEnvironmental;
 import pl.rr.project.s.gui.scenes.SceneNames;
 
+import java.awt.*;
 import java.io.IOException;
 
 public class ProfilePanelController extends ProfilePanelMethods {
 
     @FXML
-    private TextField username1;
+    private Label username1;
     @FXML
     private ImageView avatar1;
     @FXML
@@ -24,9 +25,15 @@ public class ProfilePanelController extends ProfilePanelMethods {
     @FXML
     private TextField description2;
     @FXML
+    private TextField changedescription1;
+    @FXML
     private Button savedescription1;
     @FXML
     private VBox descriptionchangepanel;
+    @FXML
+    private Polygon avatar_right;
+    @FXML
+    private Polygon avatar_left;
 
 
     @FXML
@@ -63,6 +70,11 @@ public class ProfilePanelController extends ProfilePanelMethods {
                 description1.setText((UserEnvironmental.DESCRIPTION));
             }
         });
+    }
+
+    @FXML
+    public void changeAvatar(MouseEvent event) {
+
     }
 
 }
