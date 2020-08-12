@@ -1,4 +1,6 @@
 package pl.rr.project.s.gui.games.dino;
 
-public class dinoPanelMethods {
+import pl.rr.project.s.BasicMethods;
+
+public class dinoPanelMethods extends BasicMethods {
 }
