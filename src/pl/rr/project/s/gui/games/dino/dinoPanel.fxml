@@ -5,11 +5,13 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" style="-fx-background-color: darkblue;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.rr.project.s.gui.games.dino.dinoPanelController">
+<Pane fx:id="dinoPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#keyListener" prefHeight="800.0" prefWidth="800.0" style="-fx-background-color: darkblue;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.rr.project.s.gui.games.dino.dinoPanelController">
    <children>
       <Button layoutX="657.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#goBackToMenu" prefHeight="62.0" prefWidth="129.0" text="Exit" />
-      <Button layoutX="14.0" layoutY="11.0" mnemonicParsing="false" prefHeight="69.0" prefWidth="142.0" text="Start" />
+      <Button fx:id="startButton" layoutX="14.0" layoutY="11.0" mnemonicParsing="false" onMouseClicked="#startAnimation" prefHeight="69.0" prefWidth="142.0" text="Start" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#214a18" height="200.0" layoutX="-1.0" layoutY="600.0" stroke="BLACK" strokeType="INSIDE" width="807.0" />
       <ImageView fitHeight="86.0" fitWidth="66.0" layoutY="514.0" pickOnBounds="true" preserveRatio="true" />
+      <Ellipse fx:id="circle" fill="#141d25" layoutX="643.0" layoutY="514.0" onMouseClicked="#startAnimation" radiusX="71.0" radiusY="80.0" stroke="BLACK" strokeType="INSIDE" />
+      <Ellipse fx:id="player" fill="DODGERBLUE" layoutX="114.0" layoutY="514.0" onKeyPressed="#jump" onKeyReleased="#jump" radiusX="100.0" radiusY="80.0" stroke="BLACK" strokeType="INSIDE" />
    </children>
 </Pane>

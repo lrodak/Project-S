@@ -68,6 +68,10 @@ public class MenuPanelController extends LoginPanelMethods {
         getSceneUtils().goToScene(SceneNames.MINECRAFT_SCENE, null, mouseEvent);
     }
     @FXML
+    public void goToFutureFortune(MouseEvent mouseEvent) throws IOException {
+        getSceneUtils().goToScene(SceneNames.FUTUREFORTUNE_SCENE, null, mouseEvent);
+    }
+        @FXML
     public void onMouseCarried(MouseEvent mouseEvent) {
         gotoProfileButton.setTooltip(new Tooltip("View my profile"));
         gotoProfileButton.setCursor(Cursor.HAND);
