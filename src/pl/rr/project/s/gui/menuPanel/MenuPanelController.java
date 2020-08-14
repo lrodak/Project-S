@@ -5,7 +5,6 @@ import javafx.fxml.FXML;
 import javafx.scene.Cursor;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -64,8 +63,8 @@ public class MenuPanelController extends LoginPanelMethods {
         getSceneUtils().goToScene(SceneNames.DINO_SCENE, null, mouseEvent);
     }
     @FXML
-    public void goToMinecraft(MouseEvent mouseEvent) throws IOException {
-        getSceneUtils().goToScene(SceneNames.MINECRAFT_SCENE, null, mouseEvent);
+    public void goToMyColor(MouseEvent mouseEvent) throws IOException {
+        getSceneUtils().goToScene(SceneNames.MYCOLOR_SCENE, null, mouseEvent);
     }
     @FXML
     public void goToFutureFortune(MouseEvent mouseEvent) throws IOException {

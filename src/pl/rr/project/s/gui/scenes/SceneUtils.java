@@ -73,11 +73,10 @@ public class SceneUtils {
                 y = Settings.ProfilePanelHigh;
                 root = FXMLLoader.load(getClass().getResource("/pl/rr/project/s/gui/profilePanel/profilePanel.fxml"));
                 break;
-            case MINECRAFT_SCENE:
-                x = Settings.MinecraftPanelWith;
-                y = Settings.MinecraftPanelHigh;
-                root = FXMLLoader.load(getClass().getResource("/pl/rr/project/s/gui/games/minecraft/minecraftPanel.fxml"));
-                window.initStyle(StageStyle.DECORATED);
+            case MYCOLOR_SCENE:
+                x = Settings.MyColorPanelWith;
+                y = Settings.MyColorPanelHigh;
+                root = FXMLLoader.load(getClass().getResource("/pl/rr/project/s/gui/games/myColor/myColorPanel.fxml"));
                 break;
             case DINO_SCENE:
                 x = Settings.DinoPanelWith;
