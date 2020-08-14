@@ -70,7 +70,7 @@ public class MenuPanelController extends LoginPanelMethods {
     public void goToFutureFortune(MouseEvent mouseEvent) throws IOException {
         getSceneUtils().goToScene(SceneNames.FUTUREFORTUNE_SCENE, null, mouseEvent);
     }
-        @FXML
+    @FXML
     public void onMouseCarried(MouseEvent mouseEvent) {
         gotoProfileButton.setTooltip(new Tooltip("View my profile"));
         gotoProfileButton.setCursor(Cursor.HAND);
