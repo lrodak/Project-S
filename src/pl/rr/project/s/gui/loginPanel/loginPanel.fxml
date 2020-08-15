@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.*?>
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#key" prefHeight="500.0" prefWidth="400.0" scaleShape="false" styleClass="panel-main" stylesheets="@loginPanelStyles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.rr.project.s.gui.loginPanel.LoginPanelController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="400.0" scaleShape="false" styleClass="panel-main" stylesheets="@loginPanelStyles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.rr.project.s.gui.loginPanel.LoginPanelController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#171a21" height="100.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="400.0" />
       <TextField fx:id="username" layoutX="120.0" layoutY="167.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="160.0" styleClass="text-field-login" />

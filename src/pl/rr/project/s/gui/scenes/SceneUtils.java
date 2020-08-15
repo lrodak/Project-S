@@ -35,7 +35,7 @@ public class SceneUtils {
         } else if (sceneName.equals(SceneNames.LOGIN_SCENE) && !UserEnvironmental.INIT_LOGIN) {
             window.centerOnScreen();
             UserEnvironmental.INIT_LOGIN = true;
-        } else if (sceneName.equals(SceneNames.MYCOLOR_SCENE)) {
+        } else if (sceneName.equals(SceneNames.MYCOLOR_SCENE) || sceneName.equals(SceneNames.FUTUREFORTUNE_SCENE)) {
             window.centerOnScreen();
             UserEnvironmental.INIT_MENU = false;
         }

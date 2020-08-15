@@ -5,7 +5,6 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import pl.rr.project.s.ApplicationSettings;
 import pl.rr.project.s.UserEnvironmental;
@@ -125,7 +124,4 @@ public class LoginPanelController extends LoginPanelMethods {
         invalidText.setText(ApplicationSettings.getMessage("INVALID_USERNAME_PASSWORD"));
     }
 
-    public void key(KeyEvent keyEvent){
-        System.out.println(keyEvent);
-    }
 }
